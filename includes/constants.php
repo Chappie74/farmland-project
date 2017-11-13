@@ -10,7 +10,7 @@
      */
 
     // your database's name
-    define("DATABASE", "pset7");
+    define("DATABASE", "farmland");
 
     // your database's password
     define("PASSWORD", "Google12");
