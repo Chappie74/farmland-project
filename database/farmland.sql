@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 13, 2017 at 09:52 PM
+-- Generation Time: Nov 14, 2017 at 08:29 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -34,9 +34,16 @@ CREATE TABLE IF NOT EXISTS `addresses` (
   `lot_number` varchar(10) NOT NULL,
   `address_line` varchar(1000) NOT NULL,
   `town` varchar(100) NOT NULL,
-  `region` int(5) NOT NULL,
+  `region` varchar(10) NOT NULL,
   PRIMARY KEY (`address_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `addresses`
+--
+
+INSERT INTO `addresses` (`address_id`, `lot_number`, `address_line`, `town`, `region`) VALUES
+(15, 'sd', '14518 156TH ST JAMAICA', 'JAMAICA', '9');
 
 -- --------------------------------------------------------
 
@@ -147,17 +154,24 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `phone` varchar(11) NOT NULL,
+  `phone` varchar(13) NOT NULL,
   `username` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(500) NOT NULL,
-  `money` decimal(12,2) UNSIGNED NOT NULL,
+  `cash` decimal(12,2) UNSIGNED NOT NULL,
   `profile_picture` varchar(5000) NOT NULL,
   `address_id` int(5) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username` (`username`),
   KEY `address_id` (`address_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='This table stores the user data ';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='This table stores the user data ';
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `phone`, `username`, `password`, `email`, `cash`, `profile_picture`, `address_id`) VALUES
+(2, 'Travon', 'Sheoprashad', '7189773600', 'seanmsingh74', '$1$G05.Xd/.$4.6cHSlJE3t5yX3R2GxvM.', 'seanmsingh7@yahoo.com', '1000000.00', 'img/profilePics/chappie.jpg', 15);
 
 --
 -- Constraints for dumped tables
