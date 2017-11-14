@@ -1,8 +1,6 @@
-/**
- * scripts.js
- *
- * Computer Science 50
- * Problem Set 7
- *
- * Global JavaScript, if any.
- */
+$(document).ready(function(){
+    $("#next_btn, #back_btn").click(function(){
+        $("#address").toggleClass("hidden");
+        $("#basic_row").toggleClass("hidden");
+    });
+});
