@@ -197,7 +197,7 @@
     /**
      * Renders template, passing in values.
      */
-    function render($template, $values = [])
+    function render($template, $values = [] ,$pagealone = false )
     {
         // if template exists, render it
         if (file_exists("../templates/$template"))
@@ -205,14 +205,22 @@
             // extract variables into local scope
             extract($values);
 
-            // render header
-            require("../templates/header.php");
+            if($pagealone)
+            {
+                require("../templates/$template");
+            }
+            else
+            {
+                // render header
+                require("../templates/header.php");
 
-            // render template
-            require("../templates/$template");
+                // render template
+                require("../templates/$template");
 
-            // render footer
-            require("../templates/footer.php");
+                // render footer
+                require("../templates/footer.php");
+            }
+            
         }
 
         // else err
