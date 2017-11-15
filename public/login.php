@@ -1,8 +1,9 @@
 <?php
 	
 	require("../includes/config.php");
-
-	if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["signup"] == "signup")
+	$salt = "2a07usesomesillystringfore2uDLvp1Ii2e./U9C8sBjqp8I90dH6hi";
+	//determine whether the form was submitted and which button was pressed. (signup/login)
+	if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["btn_type"] == "signup") //if signup was pressed
 	{
 		$first_name = (string)$_POST['first_name'];
 		$last_name = (string)$_POST['last_name'];
@@ -35,7 +36,7 @@
 				//prepare sql to insert into users next
 				$sql = "INSERT INTO users (first_name, last_name, phone, username, password, email, cash, profile_picture, address_id) VALUES 
 						(?, ?, ?, ?, ?, ?, ?,?, ?)";
-				$rows = query($sql,$first_name, $last_name, $phone, $username, crypt($password), $email, $cash, $profile_picture, $address_id); //execute query
+				$rows = query($sql,$first_name, $last_name, $phone, $username, crypt($password, $salt), $email, $cash, $profile_picture, $address_id); //execute query
 
 
 				if($row !== false)
@@ -50,6 +51,24 @@
 		}
 
 		apologize("Some form data was not set. Please try again.");
+	}
+	else if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["btn_type"] == "login") //if login was pressed
+	{
+		$username = (string)$_POST["username"];
+		$password = (string)$_POST["password"];
+
+		$sql = "SELECT * FROM users WHERE username = ? OR email = ? AND password = ? LIMIT 1";
+		$rows = query($sql, $username, $username,crypt($password,$salt));
+		
+		
+		if($rows != [])
+		{
+			$_SESSION["id"] = $rows[0]["user_id"];
+			redirect("index.php");
+		}
+		apologize("Could not find a Username with the correspoinding password in the database. Consider signing up.");
+
+
 	}
 
 	render("../templates/login_form.php", [] ,true);

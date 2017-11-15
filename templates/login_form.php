@@ -8,6 +8,25 @@
   <script src="../public/js/jquery-1.10.2.min.js"></script>
   <script src="../public/js/bootstrap.min.js"></script>
   <script src="../public/js/scripts.js"></script>
+<!-- 
+  <style type="text/css">
+  input {
+    border: 1px solid #eee;
+    margin: 10px;
+    padding: 5px;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+
+  input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  } 
+
+  </style> -->
 </head>
 <body>
 
@@ -40,18 +59,18 @@
 
                   <div class="form-group">
                     <label for="username/email">Username/Email</label>
-                    <input type="text" name="username" class="form-control" required="required" placeholder="Username/Email" />
+                    <input type="text" name="username" class="form-control" tabindex="1"  required="required" placeholder="Username/Email" />
                   </div>
 
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" name="password" class="form-control" required="required" placeholder="Password" />
+                    <input type="password" name="password" class="form-control" tabindex="2" required="required" placeholder="Password" />
                   </div>
 
                   <div class="row">
                     <div class="col-md-10"></div>
                     <div class="col-md-2">
-                      <button type="submit" class="btn btn-primary btn-md" name=login value="login">Log In</button>
+                      <button type="submit" class="btn btn-primary btn-md" name="btn_type" value="login">Log In</button>
                     </div>
                   </div>                 
                 </form>
@@ -65,22 +84,22 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" name="first_name" class="form-control signup" required="required" placeholder="First Name" />
+                        <input type="text" name="first_name" class="form-control signup" tabindex="1" required="required" placeholder="First Name" />
                       </div>
 
                       <div class="form-group">
                         <label for="lot_number">Lot Number</label>
-                        <input type="text" name="lot_number" class="form-control signup" required="required" placeholder="Lot Number" />
+                        <input type="text" name="lot_number" class="form-control signup" tabindex="3" required="required" placeholder="Lot Number" />
                       </div>                      
 
                       <div class="form-group">
                         <label for="town">Town</label>
-                        <input type="text" name="town" class="form-control signup" required="required" placeholder="Town" />
+                        <input type="text" name="town" class="form-control signup" tabindex="5" required="required" placeholder="Town" />
                       </div>
 
                       <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="text" name="phone" class="form-control signup" required="required" placeholder="eg. XXX-XXX-XXXX" />
+                        <input type="text" name="phone" class="form-control signup" tabindex="7" required="required" placeholder="eg. XXX-XXX-XXXX" />
                       </div>
 
                       <div class="text-warning">Fill out all field to continue.</div>
@@ -90,17 +109,17 @@
 
                       <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" name="last_name" class="form-control signup" required="required" placeholder="Last Name" />
+                        <input type="text" name="last_name" class="form-control signup" tabindex="2" required="required" placeholder="Last Name" />
                       </div>
 
                       <div class="form-group">
                         <label for="address_line">Address Line</label>
-                        <input type="text" name="address_line" class="form-control signup" required="required" placeholder="Address Line" />
+                        <input type="text" name="address_line" class="form-control signup" tabindex="4" required="required" placeholder="Address Line" />
                       </div>                          
 
                       <div class="form-group">
                         <label for="region">Region</label>
-                        <select class="form-control" name="region">
+                        <select class="form-control" name="region" tabindex="6" >
                           <?php 
                             for ($i=1; $i <= 10 ; $i++) { 
                               echo '<option>'.$i.'</option>';
@@ -112,7 +131,7 @@
                       <div class="row">
                         <div class="col-md-8"></div>
                         <div class="col-md-1">
-                          <div id="next_btn" class="btn btn-info btn-md " >Next</div>
+                          <div id="next_btn" class="btn btn-info btn-md " tabindex="8">Next</div>
                         </div>
                         <div class="col-md-2"></div>
                       </div>
@@ -164,7 +183,7 @@
                   <div class="row">
                     <div class="col-md-10"></div>
                     <div class="col-md-2">
-                      <button type="submit" value="signup" name="signup" id="signup_submit" disabled="true" class="btn btn-primary btn-md " >Sign Up</button>
+                      <button type="submit" value="signup" name="btn_type" id="signup_submit" disabled="true" class="btn btn-primary btn-md " >Sign Up</button>
                     </div>
                   </div>  
 
