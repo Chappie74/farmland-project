@@ -8,27 +8,29 @@
   <script src="../public/js/jquery-1.10.2.min.js"></script>
   <script src="../public/js/bootstrap.min.js"></script>
   <script src="../public/js/scripts.js"></script>
-<!-- 
+
   <style type="text/css">
-  input {
-    border: 1px solid #eee;
-    margin: 10px;
-    padding: 5px;
-    -moz-transition: all .5s;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-  }
+        .modal {
+        text-align: center;
+        padding: 0!important;
+      }
 
-  input:focus {
-    border-color: #66afe9;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  } 
+      .modal:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+      }
 
-  </style> -->
+      .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+      }
+  </style>
 </head>
-<body>
+<body background="../public/img/background/crops.png">
 
 
 <script type="text/javascript">
@@ -50,6 +52,8 @@
             <li class="active"><a href="#login" data-toggle="tab" aria-expanded="false">Log In</a></li>
             <li class=""><a href="#signup" data-toggle="tab" aria-expanded="true">Sign Up</a></li> 
           </ul>
+          <br>
+          <span class="right text-info">To continue to the site you must first log in or sign up. Thank you.</span>
 
         </div>
         <div class="modal-body">
