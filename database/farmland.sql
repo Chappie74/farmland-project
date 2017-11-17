@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 14, 2017 at 08:29 PM
+-- Generation Time: Nov 17, 2017 at 03:02 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -36,14 +36,14 @@ CREATE TABLE IF NOT EXISTS `addresses` (
   `town` varchar(100) NOT NULL,
   `region` varchar(10) NOT NULL,
   PRIMARY KEY (`address_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `addresses`
 --
 
 INSERT INTO `addresses` (`address_id`, `lot_number`, `address_line`, `town`, `region`) VALUES
-(15, 'sd', '14518 156TH ST JAMAICA', 'JAMAICA', '9');
+(16, '2b', 'Grant Scheme,Craig', 'Georgetown', '4');
 
 -- --------------------------------------------------------
 
@@ -100,11 +100,30 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `product_id` int(5) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `price` decimal(12,2) NOT NULL,
   `category_id` int(5) NOT NULL,
-  `expiration_date` datetime NOT NULL,
+  `image` varchar(3000) NOT NULL,
   PRIMARY KEY (`product_id`),
   KEY `category_id` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products_for_sale`
+--
+
+DROP TABLE IF EXISTS `products_for_sale`;
+CREATE TABLE IF NOT EXISTS `products_for_sale` (
+  `product_for_sale_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `date_listed` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `expirtation_date` datetime NOT NULL,
+  `price` decimal(65,2) NOT NULL,
+  PRIMARY KEY (`product_for_sale_id`),
+  KEY `product_id` (`product_id`),
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `sell_product` (
   `sell_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `date_purchased` datetime NOT NULL,
+  `date_sold` datetime NOT NULL,
   `amount` int(11) NOT NULL,
   PRIMARY KEY (`sell_product_id`),
   KEY `product_id` (`product_id`),
@@ -164,14 +183,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username` (`username`),
   KEY `address_id` (`address_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='This table stores the user data ';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='This table stores the user data ';
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `phone`, `username`, `password`, `email`, `cash`, `profile_picture`, `address_id`) VALUES
-(2, 'Travon', 'Sheoprashad', '7189773600', 'seanmsingh74', '$1$G05.Xd/.$4.6cHSlJE3t5yX3R2GxvM.', 'seanmsingh7@yahoo.com', '1000000.00', 'img/profilePics/chappie.jpg', 15);
+(3, 'Sean', 'Singh', '592-6487886', 'Chappie74', '2aTcmg0zZDSVk', 'seanmsingh7@yahoo.com', '1000000.00', 'img/profilePics/chappie.jpg', 16);
 
 --
 -- Constraints for dumped tables
@@ -189,6 +208,13 @@ ALTER TABLE `makes_comment`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `products_for_sale`
+--
+ALTER TABLE `products_for_sale`
+  ADD CONSTRAINT `products_for_sale_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_for_sale_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `purchase_product`
