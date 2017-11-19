@@ -18,41 +18,57 @@
         <script src="../public/js/bootstrap.min.js"></script>
         <script src="../public/js/scripts.js"></script>
 
+        <style type="text/css">
+            #profile_pic
+            {
+                padding:5px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        </style>
     </head>
 
-    <body>
+    <body>  
+            <?php
+                $sql = "SELECT profile_picture FROM users WHERE user_id = ? LIMIT 1";
+                $rows = query($sql,$_SESSION["id"]);
 
-        <div class="container">
+                if($rows[0] != null)
+                {
+                    $pp = $rows[0]["profile_picture"];
+                }                              
+                else
+                    $pp = "img/profilePics/chappie.jpg";
 
-            <div class="row">
-                <a href="../public/index.php"><img alt="C$50 Finance" src="../public/img/logo.png"/></a>
-            </div>  
-
-            <nav class="navbar navbar-default">
-              <div >
-                <div class="navbar-header">                  
-                  <a class="navbar-brand" href="../public/index.php"><span class="glyphicon glyphicon-home"></span></a>
+            ?>           
+            <nav class="navbar navbar-default navbar-static-top">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">Dashboard</a>
                 </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                    <li><a href="../public/quote.php">Quote</a></li>
-                    <li><a href="../public/buy.php">Buy</a></li>
-                    <li><a href="../public/history.php">History</a></li>
-                    
-                  </ul>
-                  
-                  <ul class="nav navbar-nav navbar-right">
-                    <?php if (empty($_SESSION["id"])): ?>
-                        <li><a href="../public/login.php">Login</a></li>
-                        <li><a href="../public/register.php">Register</a></li>
-                    <?php else: ?>
-                        <li><a href="../public/logout.php">Logout</a></li> 
-                    <?php endif; ?>       
-                  </ul>
-                </div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Page 1</a></li>
+                  <li><a href="#">Page 2</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">   
+                  <li class="dropdown" style="padding:0px">                    
+                    <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" class="dropdown-toggle" data-toggle="dropdown" />
+                    <ul class="dropdown-menu">                      
+                      <li><a href="#"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>
+                      <li><a href="#">Page 1-3</a></li>
+                      <li><a href="../public/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                  </li>                 
+                </ul>
               </div>
-        </nav>
-    </div>    
+            </nav>
 
-    <div class="row">
+    <div class="container-fluid">
+        <div class="row">

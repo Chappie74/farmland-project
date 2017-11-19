@@ -30,7 +30,7 @@
       }
   </style>
 </head>
-<body background="../public/img/background/crops.png">
+<body background="../public/img/background/farmland1.png">
 
 
 <script type="text/javascript">
