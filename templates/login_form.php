@@ -8,6 +8,7 @@
   <script src="../public/js/jquery-1.10.2.min.js"></script>
   <script src="../public/js/bootstrap.min.js"></script>
   <script src="../public/js/scripts.js"></script>
+  <script src="../public/js/login_script.js"></script>
 
   <style type="text/css">
         .modal {
@@ -153,33 +154,35 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control signup" required="required" placeholder="Password" />
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control signup " required="required" placeholder="Username" />
                           </div>
-
-                          <div class="row">
-                            <div class="col-md-2">
-                              <div id="back_btn" class="btn btn-info btn-md">Back</div>                              
-                            </div>
-                            <div class="col-md-10"></div>
-                          </div>
-
                         </div>
 
                         <div class="col-md-6">
 
+                          
                           <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" name="username" class="form-control signup " required="required" placeholder="Username" />
-                          </div>
+                            <label for="password">Password</label>
+                            <input type="password" id = "password" name="password" class="form-control signup" required="required" placeholder="Password" />
 
+                          </div>
                           <div class="form-group">
                             <label for="confirm_password">Confirm Password</label>
-                            <input type="password" name="confirm_password" class="form-control signup" required="required" placeholder="Confirm Password" />
-                          </div>
-                          <div class="text-warning">Fill out all field to continue.</div>
-                          
+                            <input type="password" id = "con_pass" name="confirm_password" class="form-control signup" required="required" placeholder="Confirm Password" />
+                            <span class="text-danger"  id = "pass_no_match">Password does not match</span>
+                          </div>                         
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6">
+                              <div id="back_btn" class="btn btn-info btn-md">Back</div>                              
+                            </div>
+                            <div class="col-md-6">
+                              <div class="text-warning">Fill out all field to continue.</div>
+                            </div>
+                        </div>
+
                     </div> 
                   </div>
 
