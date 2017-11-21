@@ -39,7 +39,6 @@
                 }                              
                 else
                     $pp = "img/profilePics/chappie.jpg";
-
             ?>           
             <nav class="navbar navbar-default navbar-static-top">
               <div class="container-fluid">
@@ -61,7 +60,7 @@
                   <li class="dropdown" style="padding:0px">                    
                     <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" class="dropdown-toggle" data-toggle="dropdown" />
                     <ul class="dropdown-menu">                      
-                      <li><a href="#"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>
+                      <li><a href="../public/profile.php"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>
                       <li><a href="#">Page 1-3</a></li>
                       <li><a href="../public/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                     </ul>

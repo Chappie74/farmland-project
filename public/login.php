@@ -39,7 +39,7 @@
 				$rows = query($sql,$first_name, $last_name, $phone, $username, crypt($password, $salt), $email, $cash, $profile_picture, $address_id); //execute query
 
 
-				if($row !== false)
+				if($rows !== false)
 				{
 					$rows = query("SELECT LAST_INSERT_ID() AS id"); //retrieve last insert id
 					$_SESSION["id"] = $rows[0]["id"]; //store it as session id
