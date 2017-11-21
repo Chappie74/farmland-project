@@ -6,12 +6,13 @@
 		$_SESSION['info_update_success'] = 0;	
 	}
 ?>
+<br>
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-md-3" >
 	</div>
 
 	<form action="../public/profile.php" method="POST">
-		<div class="col-md-6">
+		<div class="col-md-6" style="box-shadow: 1px 2px 20px 5px gray; padding-left: 50px;" >
 			<!-- Personal information and contact section -->
 			<div class="row">
 				<h3>Personal and Contact Information</h3>	
@@ -127,18 +128,20 @@
 							<label for="region">Region:</label>
 						</div>
 
-						<div class="col-md-2">
-	                       <select class="form-control" name="region" tabindex="8" >
-	                          <?php 
-	                            for ($i=1; $i <= 10 ; $i++) { 
-	                            	if($i == $region)
-	                            		echo '<option selected="selected">'.$i.'</option>';	
-	                            	else
-	                              		echo '<option>'.$i.'</option>';
-	                            }                            
-	                          ?>
-	                        </select> 
-                    	</div>
+						<div class="col-md-9">
+							<div class="col-md-2">
+		                       <select class="form-control" name="region" tabindex="8" >
+		                          <?php 
+		                            for ($i=1; $i <= 10 ; $i++) { 
+		                            	if($i == $region)
+		                            		echo '<option selected="selected">'.$i.'</option>';	
+		                            	else
+		                              		echo '<option>'.$i.'</option>';
+		                            }                            
+		                          ?>
+		                        </select> 
+	                    	</div>
+	                    </div>	
                     </div>
 				</div>
 				<hr>
@@ -146,10 +149,11 @@
 			<div class="row">
 				<button type="submit" class="btn btn-primary">Update Information</button>
 			</div>
+			<br>
 		</div>
 	</form>
 
-	<div class="col-md-3">		
+	<div class="col-md-3" style="border-right:2px solid gray;">		
 	</div>
 
 
