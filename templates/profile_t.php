@@ -6,6 +6,7 @@
 		$_SESSION['info_update_success'] = 0;	
 	}
 ?>
+
 <br>
 <div class="row">
 	<div class="col-md-3" >
@@ -147,7 +148,11 @@
 				<hr>
 			</div>	
 			<div class="row">
-				<button type="submit" class="btn btn-primary">Update Information</button>
+				<div class="col-md-3">
+					<button type="submit" class="btn btn-primary">Update Information</button>
+				</div>
+				<div class="col-md-6"></div>
+				<div class="col-md-3"><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#password_change">Change Password</button></div>			
 			</div>
 			<br>
 		</div>
@@ -157,4 +162,39 @@
 	</div>
 
 
+
+		<!-- Change password Modal -->
+	  <div class="modal fade" id="password_change" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title text-center">Change Password</h4>
+	        </div>
+	        <div class="modal-body">
+	          <form method="POST" action="../public/password_change.php">
+	          	<div class="form-group">
+	          		<label>Current Password:</label>
+	          		<input type="password" class="form-control" name="password" required />
+	          	</div>	          	
+	          	<div class="form-group">
+	          		<label>New Password:</label>
+	          		<input type="password" class="form-control" name="new_password" required />
+	          	</div>
+	          	<div class="form-group">
+	          		<label>Confirm New Password:</label>
+	          		<input type="password" class="form-control" name="con_pass" required />
+	          	</div>
+	          	<button type="submit" class="btn btn-primary btn-sm">Change password</button>
+	          </form>
+	        </div>
+	        <div class="modal-footer">
+	          
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 </div>
