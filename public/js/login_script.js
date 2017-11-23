@@ -3,8 +3,9 @@ var conf_pass = false;
 $(document).ready(function(){
     //for switching between the next and back forms in sign up
     $("#next_btn, #back_btn").click(function(){
-        $("#address").toggleClass("hidden");
-        $("#basic_row").toggleClass("hidden");
+        
+        $("#signup_data_1").toggleClass("hidden");
+        $("#signup_data_2").toggleClass("hidden");
     });
 
     $("#con_pass, #password").each(function(){
