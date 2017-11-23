@@ -2,7 +2,7 @@
 
 	<h3>Invoices</h3>
 
-	<input id="filterbox" type="text" class="form-control" onkeyup="filterTable('filterbox','invoice_table')" placeholder="Filter By Item">
+	<input id="filter_box" type="text" class="form-control" onkeyup="filterTable('filter_box','invoice_table')" placeholder="Filter By Item">
 
 </div>
 
@@ -61,9 +61,9 @@
 				
 				<th scope="row">1</th>
 				
-				<td>totatoes</td>
+				<td>Carrot</td>
 
-				<td>very nice potatoes </td>
+				<td>very nice Carrots </td>
 
 				<td>Random</td>
 
@@ -71,12 +71,12 @@
 
 				<td>34</td>
 
-				<td>$235</td>
+				<td>$671</td>
 
 			</tr>
 
 			<tr>
-				<th scope="row">1</th>
+				<th scope="row">2</th>
 
 				<td>Potatoes</td>
 
@@ -93,19 +93,19 @@
 			</tr>
 
 			<tr>
-				<th scope="row">1</th>
+				<th scope="row">3</th>
 
-				<td>Potatoes</td>
+				<td>Mangoes</td>
 
-				<td>very nice potatoes </td>
+				<td>very nice mangoes </td>
 
-				<td>Random</td>
+				<td>that guy</td>
 
 				<td>12/25/2015</td>
 
-				<td>34</td>
+				<td>67</td>
 
-				<td>$235</td>
+				<td>$135</td>
 
 			</tr>
 
