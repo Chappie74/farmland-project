@@ -36,78 +36,28 @@
 
 		<tbody>
 
-			<!-- <?php foreach ($positions as $position): ?> -->
+			<?php foreach ($positions as $position): ?>
 
 			<tr>
-				<th scope="row"><!-- <?= $position[""] ?> -->invoice number</th>
+				<th scope="row"> <?= $position["invoicenumber"] ?></th>
 
-				<td><!-- <?= $position[""] ?> -->item name</td>
+				<td><?= $position["product"] ?></td>
 
-				<td><!-- <?= $position[""] ?> -->item description</td>
+				<td> <?= $position[""] ?> item description</td>
 
-				<td><!-- <?= $position[""] ?> -->Client Name</td>
+				<td> <?= $position[""] ?> Client Name</td>
 
-				<td><!-- <?= $position[""] ?> -->Date</td>
+				<td> <?= $position["date"] ?> </td>
 
-				<td><!-- <?= $position[""] ?> -->units</td>
+				<td> <?= $position["units"] ?></td>
 
-				<td><!-- <?= $position[""] ?> -->total cost</td>
+				<td> <?= $position[""] ?></td>
 
 			</tr>
 
-		<!-- <?php endforeach ?> -->
+		 <?php endforeach ?> 
 
-			<tr>
-				
-				<th scope="row">1</th>
-				
-				<td>Carrot</td>
-
-				<td>very nice Carrots </td>
-
-				<td>Random</td>
-
-				<td>12/25/2015</td>
-
-				<td>34</td>
-
-				<td>$671</td>
-
-			</tr>
-
-			<tr>
-				<th scope="row">2</th>
-
-				<td>Potatoes</td>
-
-				<td>very nice potatoes </td>
-
-				<td>Random</td>
-
-				<td>12/25/2015</td>
-
-				<td>34</td>
-
-				<td>$235</td>
-
-			</tr>
-
-			<tr>
-				<th scope="row">3</th>
-
-				<td>Mangoes</td>
-
-				<td>very nice mangoes </td>
-
-				<td>that guy</td>
-
-				<td>12/25/2015</td>
-
-				<td>67</td>
-
-				<td>$135</td>
-
-			</tr>
+			
 
 		</tbody>
 
