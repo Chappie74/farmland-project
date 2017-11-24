@@ -115,7 +115,7 @@
 						</div>
 							
 						<div class="col-md-9">     
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<input type="text" name="town" class="form-control" tabindex="7" value='<?php echo $town; ?>' required="required" placeholder="Town" />
 							</div>		                
 				          </div>		
@@ -130,7 +130,7 @@
 						</div>
 
 						<div class="col-md-9">
-							<div class="col-md-2">
+							<div class="col-md-3">
 		                       <select class="form-control" name="region" tabindex="8" >
 		                          <?php 
 		                            for ($i=1; $i <= 10 ; $i++) { 
@@ -152,7 +152,7 @@
 					<button type="submit" class="btn btn-primary">Update Information</button>
 				</div>
 				<div class="col-md-6"></div>
-				<div class="col-md-3"><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#password_change">Change Password</button></div>			
+				<div class="col-md-3"><button type="button" class="btn btn-info btn-md" id="change_pass_btn" data-toggle="modal" data-target="#password_change">Change Password</button></div>			
 			</div>
 			<br>
 		</div>
@@ -174,10 +174,14 @@
 	          <h4 class="modal-title text-center">Change Password</h4>
 	        </div>
 	        <div class="modal-body">
-	          <form method="POST" action="../public/password_change.php">
+	          <form method="POST" action="../public/change-password.php" name="change_pass">
 	          	<div class="form-group">
-	          		<label>Current Password:</label>
+	          		<label>Current Password:</label>	          		
 	          		<input type="password" class="form-control" name="password" required />
+	          		<div class="row">	      
+	          			<div class="col-md-8"></div> 			
+	          			<label class="text-danger hidden col-md-4" id = "danger_incorrect"></label>
+	          		</div>
 	          	</div>	          	
 	          	<div class="form-group">
 	          		<label>New Password:</label>
@@ -185,10 +189,16 @@
 	          	</div>
 	          	<div class="form-group">
 	          		<label>Confirm New Password:</label>
-	          		<input type="password" class="form-control" name="con_pass" required />
-	          	</div>
-	          	<button type="submit" class="btn btn-primary btn-sm">Change password</button>
+	          		<input type="password" class="form-control" name="con_password" required />
+	          		<div class="row">	      
+	          			<div class="col-md-7"></div> 			
+	          			<label class="text-danger hidden col-md-5" id="conf_pass"></label>
+	          		</div>
+	          	</div>	      
+	          	<button type="submit" class="btn btn-primary btn-sm">Update Password</button> 
+	          	<label id="success" class="text-success">Hi</label>   	
 	          </form>
+	          
 	        </div>
 	        <div class="modal-footer">
 	          
@@ -198,3 +208,5 @@
 	    </div>
 	  </div>
 </div>
+
+<script type="text/javascript" src="../public/js/profile_t.js"></script>
