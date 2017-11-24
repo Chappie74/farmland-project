@@ -25,8 +25,7 @@
 			$a_id = query($sql, $_SESSION['id']);
 
 			$sql = "UPDATE addresses SET address_line = ?, town = ?, lot_number = ?, region = ? WHERE address_id = ?;";
-
-			$results = query($sql, $address_line, $town, $lot_number, $region, $a_id[0]["address_id"]);
+            $results = query($sql, $address_line, $town, $lot_number, $region, $a_id[0]["address_id"]);
 
 
 
@@ -39,6 +38,7 @@
 		}
     }
 
+    //if no form submission was made. Do this by default
 
     // Query for user information
     $sql = "SELECT first_name, last_name, address_id, email, phone FROM users WHERE user_id = ? LIMIT 1";

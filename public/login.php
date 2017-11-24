@@ -52,6 +52,7 @@
 
 		apologize("Some form data was not set. Please try again.");
 	}
+	//if login was pressed
 	else if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["btn_type"] == "login") //if login was pressed
 	{
 		$username = (string)$_POST["username"];
