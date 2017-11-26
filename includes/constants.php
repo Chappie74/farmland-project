@@ -13,7 +13,7 @@
     define("DATABASE", "farmland");
 
     // your database's password
-    define("PASSWORD", "");
+    define("PASSWORD", "Google12");
 
     // your database's server
     define("SERVER", "localhost");
