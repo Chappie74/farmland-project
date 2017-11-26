@@ -10,9 +10,7 @@
     	
     
 				
-    	$rows = query("SELECT * FROM purchase_product WHERE user_id = ?", $_SESSION["id"]);
-    	
-
+    	$rows = query("SELECT * FROM sell_product WHERE user_id = ?", $_SESSION["id"]);
     	
     	$positions = [];
 
@@ -23,14 +21,11 @@
 				 $b = $z["name"];
 				 $c = $z["price"];
 
-
 				 $positions[] = [
-
-				 
-				 "invoicenumber" => $row["purchase_product_id"],
+				 "invoicenumber" => $row["sell_product_id"],
 				 "date" => $row["date_purchased"],
 				 "units" => $row["amount"],
-				 "product" => $b,
+				 "product" => $row["product_id"],
 				 "total" => $c * $row["amount"],
 				 
 				 ];
@@ -42,8 +37,8 @@
 
 		
 	
-	     // render invoice
-	    render("invoice.php", ["positions" => $positions, "title" =>"Invoice"]);	
+	     // render sales
+	    render("sales.php", ["positions" => $positions, "title" =>"Sales"]);	
 	
 
 

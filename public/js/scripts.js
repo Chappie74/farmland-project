@@ -30,7 +30,7 @@ function CheckInputs() {
 
 function filterTable(textbox,container) {
 
-  var input, filter, table, tr, td, i;
+  var input, filter, table, tr, td, tb, tf, tc, i;
 
   input = document.getElementById(textbox);
 
@@ -42,19 +42,46 @@ function filterTable(textbox,container) {
 
   for (i = 0; i < tr.length; i++) {
 
-    td = tr[i].getElementsByTagName("td")[0];
+    td = tr[i].getElementsByTagName("td")[1];
+   
+    if (td){
 
-    if (td) {
-
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1){
 
         tr[i].style.display = "";
 
-      } else {
+      } 
+      else{
 
-        tr[i].style.display = "none";
+        tb = tr[i].getElementsByTagName("td")[3];
 
+        if(tb){
+
+          if(tb.innerHTML.toUpperCase().indexOf(filter) > -1){
+
+            tr[i].style.display = "";
+
+          }else{
+
+            tc = tr[i].getElementsByTagName("td")[4];
+
+            if(tc){
+
+              if(tc.innerHTML.toUpperCase().indexOf(filter) > -1){
+
+                tr[i].style.display = "";
+
+              }else{
+
+                    tr[i].style.display = "none";
+
+              }
+            }
+          }
+        }
       }
-    }       
+    }
   }
-}
+}         
+  
+

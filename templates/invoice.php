@@ -2,7 +2,7 @@
 
 	<h3>Invoices</h3>
 
-	<input id="filter_box" type="text" class="form-control" onkeyup="filterTable('filter_box','invoice_table')" placeholder="Filter By Item">
+	<input id="filter_box" type="text" class="form-control" onkeyup="filterTable('filter_box','invoice_table')" placeholder="Filter by Item,Client,Date">
 
 </div>
 
@@ -39,7 +39,7 @@
 			<?php foreach ($positions as $position): ?>
 
 			<tr>
-				<th scope="row"> <?= $position["invoicenumber"] ?></th>
+				<td scope="row"> <?= $position["invoicenumber"] ?></td>
 
 				<td><?= $position["product"] ?></td>
 
@@ -51,68 +51,33 @@
 
 				<td> <?= $position["units"] ?></td>
 
-				<td> <?= $position[""] ?></td>
+				<td> $<?= $position["total"] ?></td>
 
 			</tr>
 
 		 <?php endforeach ?> 
 
-			
+			<tr>
+				<td scope="row">2</td>
+
+				<td>Mangoes</td>
+
+				<td> red mangoes</td>
+
+				<td>  Daryl</td>
+
+				<td>  2017-11-26</td>
+
+				<td> 4</td>
+
+				<td> $23.45</td>
+			</tr>
 
 		</tbody>
 
 	</table>
 
-   <!-- <div id="list" class="panel-body">
-
-  		
-
-		<div class="col-sm-1">01</div>
-
-		<div class="col-sm-2">Potato</div>
-
-		<div class="col-sm-3">something about this potato they are spoiled and they are used to make food for jukiees across town</div>
-
-		<div class="col-sm-2">Seefan efSieffefeeggwgh</div>
-
-		<div class="col-sm-1">11/20/1017</div>
-
-		<div class="col-sm-1">45</div>
-
-		<div class="col-sm-1">$3245</div>
-
   
-
-  </div>
-
-   <div id="list" class="panel-body">
-
-  		
-
-		<div class="col-sm-1">01</div>
-
-		<div class="col-sm-2">Potato</div>
-
-		<div class="col-sm-3">something about this potato they are spoiled and they are used to make food for jukiees across town</div>
-
-		<div class="col-sm-2">Sean Singh</div>
-
-		<div class="col-sm-1">11/20/1017</div>
-
-		<div class="col-sm-1">45</div>
-
-		<div class="col-sm-1">$3245</div>
-
-  
-
-  </div>
- -->
-</div>
-
-
-
-
-
 
 
 
