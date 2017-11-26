@@ -58,7 +58,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Page 1</a></li>
+                  <li><a href="../public/invoice.php">Invoices</a></li>
                   <li><a href="#">Page 2</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
