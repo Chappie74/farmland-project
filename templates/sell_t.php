@@ -1,4 +1,4 @@
-<div class="row">
+
 	<div class="col-md-3" >
 	</div>
 
@@ -7,9 +7,13 @@
 			<form action="../public/sell.php" method="POST" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="product_name">Product Name:</label>	
-					<input type="text" name="product_name" class="form-control" required tabindex="1" 
-						placeholder="eg. Carrots, Calaloo, Tomatoes, Sweet Potatoe" 
-					/>
+					<div class="dropdown">
+						<input type="text" name="product_name" class="form-control dropdown-toggle" required tabindex="1" 
+							placeholder="eg. Carrots, Calaloo, Tomatoes, Sweet Potatoe" data-toggle="dropdown" 
+						/>
+						<ul id="dropdown" class="dropdown-menu hidden">
+					    </ul>
+					</div>	
 				</div>
 
 				<div class="form-group">
@@ -28,7 +32,7 @@
 			                          <?php 
 			                          	echo '<option selected="selected" disabled="true">--Select A Category--</option>';
 			                            foreach ($categories as $category)
-			                           {	     		                            		                            	
+			                            {     		                            		                            	
 			                            	echo '<option>'.$category["name"].'</option>';
 			                            }                            
 			                          ?>
@@ -53,9 +57,14 @@
 					Fill out all fields to continue.
 				</div>
 				<br>
-				<button type="submit" class="btn btn-primary">List for sale</button>
+				<button type="submit" class="btn btn-primary disabled">List for sale</button>
 			</form>
 		</div>
 	<div class="col-md-3">
 	</div>
-</div>
+
+
+<!-- <form action="../public/product_names.php" method="POST">
+	<input type="text" name="getThis">
+	<input type="submit" name="">
+</form> -->

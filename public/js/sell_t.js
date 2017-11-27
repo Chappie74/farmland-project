@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+	//for uploading image
 	$("#img_file").change(function() {
 		//validation variables
 		var valid_extension = false;
@@ -46,6 +47,7 @@ $(document).ready(function() {
 			{
 				$("label[id=status] > span").html("File too large. 1MB limit.");
 			}
+			$("button[type=submit").addClass('disabled');
 			
 		}
 		else
@@ -55,6 +57,42 @@ $(document).ready(function() {
 			$("label[id=status] > i.fa-check").removeClass('hidden');		
 			$("label[id=status] > i.fa-times").addClass('hidden');
 			$("label[id=status] > span").html("File upload successful ");
-		}
+			$("button[type=submit").removeClass('disabled');
+		}		
 	});
+
+
+	//handles suggestions for name picking
+	$("input[name=product_name]").keyup(function(){
+		var product_name = $(this).val();
+		$("#dropdown").empty();
+		$("#dropdown").addClass("hidden");
+
+		if ($.trim(product_name) != '')
+	    {
+	      $.post('../public/product_names.php', {product_name: product_name},function(data, textStatus, xhr)
+	      {
+
+	          var results = JSON.parse(data);
+
+	          if(results.length > 0)
+	          {
+	          	$("#dropdown").removeClass("hidden");
+		          for (var i = results.length - 1; i >= 0; i--) 
+		          {
+		          	$("#dropdown").append('<li><a onclick="useSuggestion(this)"> '+results[i]["name"]+'</a></li>');
+		          }
+	          }
+
+	      });
+	  	};
+	});
+	
+
 });
+
+function useSuggestion(element) 
+{
+	var name = element.innerHTML;
+	$("input[name=product_name]").val(name); 
+}
