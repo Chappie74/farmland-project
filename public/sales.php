@@ -22,7 +22,7 @@
 				 $c = $z["price"];
 
 				 $positions[] = [
-				 "invoicenumber" => $row["sell_product_id"],
+				 "salenumber" => $row["sell_product_id"],
 				 "date" => $row["date_purchased"],
 				 "units" => $row["amount"],
 				 "product" => $row["product_id"],
