@@ -1,8 +1,8 @@
-<div class="col-md-1"></div>
-<div class="col-md-10">
+<div class="col-md-1 " ></div>
+<div class="col-md-10" id="items_sections">
 <div class="row">	
 	<?php foreach ($products as $product): ?>		
-	<div id = "card" class="w3-card-4 col-md-3" style="width:20%" >
+	<div   class="w3-card-4 col-md-3 card" style="width:20%" >
 		<a href="#"><div class="row" id="card_top">			
 			<div class="col-md-12">
 	    		<img src="<?php echo $product->image?>"  width="300px" style="width:100%;height: 150px	" class="img-thumbnail img-responsive">
@@ -13,8 +13,8 @@
 		<div class="w3-container" id="lower-half">
 			<div class="row" id="card_middle">
 				<div class="row" >
-					<div class="col-md-12 text-center ">
-						<?php echo $product->category; ?>
+					<div class="col-md-12 text-center " style="font-size: 20px;text-transform:capitalize;">
+						<?php echo $product->name; ?>
 					</div>	
 				</div>
 				<div class="row">
@@ -33,7 +33,7 @@
 						  <b>Price:</b> 
 					</div>		
 					<div class="col-md-6 atam_font ">
-						<?php echo $product->price; ?>
+						$<?php echo $product->price; ?>
 					</div>						
 				</div>
 				<div class="row">									
@@ -48,14 +48,14 @@
 				<div class="row" >					
 					<div class="col-md-12" id="seller">		
 						<hr>				
-						<b>Listed by:</b> <a href="#"><?php echo $product->seller; ?></a>
+						<b>Listed by:</b> <a href="#" class="btn-link"><?php echo $product->seller; ?></a>
 					</div>
 				</div>
 			</div>
 
 			<div class="row" id="card_bottom">
 				<div class="col-md-12">
-					<div class="row">
+					<div class="row ">
 						<span class="col-lg-10">
 							<i class="fa fa-shopping-cart" style="font-size:23px;color: white;"></i>
 							<label style="font-size: 15px; color: white;">&nbsp&nbspAdd to cart</label>

@@ -1,17 +1,18 @@
-#card
+.card
 {
-	border-radius: 5px;
-	padding:0px;
-	margin-left:50px;
+	border-radius: 5px;	
+	margin-left: 30px;
+	margin-bottom: 25px;
+	padding: 0px;
 	
 
 
 }
-#card:hover
+.card:hover
 {
 	
-	box-shadow: 1px 3px 10px 3px #F1AB81;
-	transition: 0.4s box-shadow;
+	box-shadow: 1px 2px 10px 3px #DF382C;
+	transition: 0.3s box-shadow;
 }
 #card_top
 {
@@ -40,12 +41,11 @@
 
 .tag
 {
-	position: absolute;
-	background-color: #38B44A;
+	position: absolute;	
 	opacity: 0.8;
 	bottom:0px;
 	right:20px;
-	color: black;
+	color: white;
 	border: 1px solid black;
 	border-right: 0px solid black;
 	font-family: 'Archivo Narrow';
@@ -70,10 +70,18 @@ hr
 
 #seller
 {
-	font-size: 10px;
+	font-size: 12px;
 }
 
 .contained
 {
 	width:106%;
+}
+
+#items_sections
+{
+	border-left: 2px solid #EEE3DD;	
+	margin-left: 20px;
+	border-right: 2px solid #EEE3DD;	
+	padding-left: 100px;
 }

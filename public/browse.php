@@ -1,7 +1,7 @@
 <?php
 	require("../includes/config.php"); 
 	$css = "../public/css/browse_t.css";
-
+	$script ="../public/js/browse_t.js";
 	class Product {
 	    function Product($id, $name, $category, $image,$seller,$date_listed, $units, $price)
 	    {
@@ -38,5 +38,5 @@
 		array_push($all_products, $product);
 	}
 
-	render("../templates/browse_t.php", ["title" => "Browse", "css" => $css, "products"=> $all_products]);
+	render("../templates/browse_t.php", ["title" => "Browse", "css" => $css, "script" => $script ,"products"=> $all_products]);
 ?>
