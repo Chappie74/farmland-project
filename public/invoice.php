@@ -18,8 +18,9 @@
 
 		foreach ($rows as $row){
 
-				 $items = query("SELECT name, price FROM products WHERE product_id = ?", $row["product_id"]);
+				 $items = query("SELECT name FROM products WHERE product_id = ?", $row["product_id"]);
 				 $b = $items[0]["name"];
+				 $items = query("SELECT price FROM products_for_sale WHERE product_id = ?", $row["product_id"]);
 				 $c = $items[0]["price"];
 				 
 

@@ -37,21 +37,20 @@
                   <thead>
 
                     <tr>
-                        <th><em class="fa fa-cog"></em></th>
-
+                    
                         <th class="hidden-xs">ID</th>
 
                         <th>Item</th>
 
-						<th>Description</th>
+            						<th>Description</th>
 
-						<th>Client</th>
+            						<th>Client</th>
 
-						<th>Date</th>
+            						<th>Date</th>
 
-						<th>Unit(s)</th>
+            						<th>Unit(s)</th>
 
-						<th>Total</th>
+            						<th>Total</th>
 
                     </tr> 
 
@@ -62,8 +61,7 @@
               			<?php foreach ($positions as $position): ?>
 
 						<tr>
-							<td align="center"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
-	                
+
 							<td scope="row"> <?= $position["salenumber"] ?></td>
 
 							<td><?= $position["product"] ?></td>

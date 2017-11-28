@@ -37,7 +37,7 @@
                   <thead>
 
                     <tr>
-                        <th><em class="fa fa-cog"></em></th>
+                        
 
                         <th class="hidden-xs">ID</th>
 
@@ -62,7 +62,7 @@
               			<?php foreach ($positions as $position): ?>
 
 						<tr>
-							<td align="center"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
+							
 	                
 							<td scope="row"> <?= $position["invoicenumber"] ?></td>
 
