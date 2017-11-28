@@ -17,9 +17,9 @@
 		foreach ($rows as $row){
 
 				 $items = query("SELECT name, price FROM products WHERE product_id = ?", $row["product_id"]);
-				 $z = $items[0];
-				 $b = $z["name"];
-				 $c = $z["price"];
+				 $b = $items[0]["name"];
+				 $c = $items[0]["price"];
+				 
 
 				 $positions[] = [
 				 "salenumber" => $row["sell_product_id"],
