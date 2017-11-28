@@ -84,8 +84,6 @@
 
 						<tr>
 
-							<td align="center"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
-
 							<td scope="row">2</td>
 
 							<td>Mangoes</td>
