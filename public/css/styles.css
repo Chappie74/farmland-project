@@ -181,20 +181,25 @@ Image credits: unsplash.com
 }
 
 #profile_dropdown_icon {
-
 	margin:0px;
-	padding-right: 13px;
-	padding-left: 13px;
-	padding-top:20px;
-
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top:18px;
 }
 
 #proflie_picture_thumbnail{
 	float: left;
 	height: 23px; 
 	width: 23px;
-	border-radius: 15px;
+	border-radius: 20px;
+  padding-bottom: 1px;
+}
 
+#cart_icon{
+  margin:0px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 18px;
 }
 
 

@@ -86,7 +86,9 @@
 
                 </form>
 
-                <ul class="nav navbar-nav navbar-right"> 
+                <ul class="nav navbar-nav navbar-right">
+
+                  <span id="cart_icon" class="glyphicon glyphicon-shopping-cart" onclick= "javascript:location.href='../public/profile.php'"></span>
 
                   <li class="dropdown">
 
