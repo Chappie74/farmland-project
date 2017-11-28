@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../public/css/bootstrap.css" rel="stylesheet"/>
         <link href="../public/css/styles.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="../public/css/font-awesome.css">                
+        <link rel="stylesheet" href="../public/css/font-awesome.css"> 
+        <link href='https://fonts.googleapis.com/css?family=Archivo Narrow' rel='stylesheet'>               
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <?php 
           if(isset($css))
@@ -61,6 +62,7 @@
                   <li class="active"><a href="#">Home</a></li>
                   <li><a href="#">Page 1</a></li>
                   <li><a href="../public/sell.php">Sell</a></li>
+                  <li><a href="../public/browse.php">Browse</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                   <div class="form-group">

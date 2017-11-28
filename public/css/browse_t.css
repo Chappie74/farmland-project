@@ -1,0 +1,72 @@
+#card
+{
+	border-radius: 5px;
+	padding:0px;
+
+
+}
+#card:hover
+{
+	
+	box-shadow: 1px 3px 10px 3px #F1AB81;
+	transition: 0.4s box-shadow;
+}
+#card_top
+{
+	
+	padding: 10px;
+}
+
+#card_middle
+{
+	
+}
+
+#card_bottom
+{
+	background-color: #F67A2F;
+	border: 2px solid #F67A2F;
+	border-radius:0px 0px 3px 3px; 
+}
+
+#lower-half
+{
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
+.tag
+{
+	position: absolute;
+	background-color: #38B44A;
+	opacity: 0.8;
+	bottom:0px;
+	right:20px;
+	color: black;
+	border: 1px solid black;
+	border-right: 0px solid black;
+	font-family: 'Archivo Narrow';
+	font-size: 16px;
+	height: 30px;
+	/*border-radius:10px 0px 0px 10px;*/
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.atam_font
+{
+	font-family: 'Atma';
+	font-size: 16px;
+	padding-left:20px;
+}
+
+hr
+{
+	border:1px solid #E5E2E1;
+}
+
+#seller
+{
+	font-size: 10px;
+}
