@@ -22,7 +22,7 @@
 
 #card_middle
 {
-	
+	background-color: #F9F3EE;
 }
 
 #card_bottom
@@ -56,9 +56,9 @@
 	padding-left: 2px;
 }
 
-.atam_font
+.Fredoka_font
 {
-	font-family: 'Atma';
+	font-family: 'Fredoka One', cursive;
 	font-size: 16px;
 	padding-left:20px;
 }
