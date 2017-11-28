@@ -51,34 +51,69 @@
                 }                              
                 else
                     $pp = "img/profilePics/chappie.jpg";
-            ?>           
+            ?>  
+
             <nav class="navbar navbar-default navbar-static-top">
+
               <div class="container-fluid">
+
                 <div class="navbar-header">
-                  <a class="navbar-brand" href="../public/index.php">Dashboard</a>
+
+                  <a class="navbar-brand" href="../public/index.php">FARMLAND</a>
+
                 </div>
+
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Page 1</a></li>
+
+                  <li><a href="../public/index.php">Home</a></li>
+
+                  <li><a href="../public/browse.php">Buy</a></li>
+
                   <li><a href="../public/sell.php">Sell</a></li>
+
                 </ul>
+
+
                 <form class="navbar-form navbar-left">
+
                   <div class="form-group">
+
                     <input type="text" class="form-control" placeholder="Search">
+
                   </div>
-                  <button type="submit" class="btn btn-info">Submit</button>
+
+                  <button type="submit" class="btn btn-info">Search</button>
+
                 </form>
-                <ul class="nav navbar-nav navbar-right">   
-                  <li class="dropdown" style="padding:0px">                    
-                    <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" class="dropdown-toggle" data-toggle="dropdown" />
-                    <ul class="dropdown-menu">                      
-                      <li><a href="../public/profile.php"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>
-                      <li><a href="#">Page 1-3</a></li>
-                      <li><a href="../public/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+
+                <ul class="nav navbar-nav navbar-right"> 
+
+                  <li class="dropdown">
+
+                    <span id="profile_dropdown_icon" class="dropdown-toggle glyphicon glyphicon-chevron-down"  data-toggle="dropdown"></span>  
+
+                    <ul class="dropdown-menu"> 
+
+                      <li><a href="../public/profile.php"><img id="proflie_picture_thumbnail" src=<?php echo "'../public/".$pp."'"; ?>>
+
+                      <span>  View Profile</span></a></li>
+
+                      <li class="divider"></li>
+
+                      <li><a href="../public/invoice.php">Invoices</a></li>
+
+                      <li><a href="../public/sales.php">Sales</a></li>
+
+                      <li><a href="../public/logout.php">Log Out</a></li>
+
                     </ul>
-                  </li>                 
+
+                  </li>
+
                 </ul>
+
               </div>
+
             </nav>
 
     <div class="container-fluid">
