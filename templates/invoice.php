@@ -43,8 +43,6 @@
 
                         <th>Item</th>
 
-						<th>Description</th>
-
 						<th>Client</th>
 
 						<th>Date</th>
@@ -68,9 +66,7 @@
 
 							<td><?= $position["product"] ?></td>
 
-							<td> <?= $position[""] ?> item description</td>
-
-							<td> <?= $position[""] ?> Client Name</td>
+							<td> <?= $position["client"] ?></td>
 
 							<td> <?= $position["date"] ?></td>
 
@@ -81,24 +77,6 @@
 						</tr>
 
 						 <?php endforeach ?> 
-
-						<tr>
-
-							<td scope="row">2</td>
-
-							<td>Mangoes</td>
-
-							<td>red mangoes</td>
-
-							<td>Daryl</td>
-
-							<td>2017-11-26</td>
-
-							<td>4</td>
-
-							<td>$23.45</td>
-
-						</tr>
 
                     </tbody>
 

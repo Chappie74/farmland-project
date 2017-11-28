@@ -42,7 +42,7 @@ function filterTable(textbox,container) {
 
   for (i = 0; i < tr.length; i++) {
 
-    td = tr[i].getElementsByTagName("td")[2];
+    td = tr[i].getElementsByTagName("td")[1];
    
     if (td){
 
@@ -53,7 +53,7 @@ function filterTable(textbox,container) {
       } 
       else{
 
-        tb = tr[i].getElementsByTagName("td")[4];
+        tb = tr[i].getElementsByTagName("td")[2];
 
         if(tb){
 
@@ -63,7 +63,7 @@ function filterTable(textbox,container) {
 
           }else{
 
-            tc = tr[i].getElementsByTagName("td")[5];
+            tc = tr[i].getElementsByTagName("td")[3];
 
             if(tc){
 

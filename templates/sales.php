@@ -37,12 +37,10 @@
                   <thead>
 
                     <tr>
-                    
+
                         <th class="hidden-xs">ID</th>
 
                         <th>Item</th>
-
-            						<th>Description</th>
 
             						<th>Client</th>
 
@@ -66,9 +64,7 @@
 
 							<td><?= $position["product"] ?></td>
 
-							<td> <?= $position[""] ?> item description</td>
-
-							<td> <?= $position[""] ?> Client Name</td>
+							<td> <?= $position["client"] ?></td>
 
 							<td> <?= $position["date"] ?></td>
 
