@@ -5,11 +5,18 @@
 	{
 		if(isset($_POST["product_name"]))
 		{
-			$product_name = $_POST["product_name"];
-
-			$sql = "SELECT name FROM products WHERE name LIKE '%{$product_name}%' ";
+			$product_name = strtolower($_POST["product_name"]);
+			$all_names = array();
+			
+			$sql = "SELECT DISTINCT name FROM products WHERE name LIKE '%{$product_name}%' ";
 			$rows = query($sql);
-			echo json_encode($rows);
+			foreach ($rows as $row) 
+			{
+				array_push($all_names, $row["name"]);
+			}
+
+			$names = array_unique($all_names);			
+			echo json_encode(array_unique($names));
 			exit;
 		}
 	}

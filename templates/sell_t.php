@@ -5,16 +5,19 @@
 	
 		<div class="col-md-5">
 			<form action="../public/sell.php" method="POST" enctype="multipart/form-data">
-				<div class="form-group">
-					<label for="product_name">Product Name:</label>	
-					<div class="dropdown">
-						<input type="text" name="product_name" class="form-control dropdown-toggle" required tabindex="1" 
-							placeholder="eg. Carrots, Calaloo, Tomatoes, Sweet Potatoe" data-toggle="dropdown" 
-						/>
-						<ul id="dropdown" class="dropdown-menu hidden">
-					    </ul>
-					</div>	
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="product_name">Product Name:</label>	
+						<div class="dropdown">
+							<input type="text" name="product_name" class="form-control dropdown-toggle" required tabindex="1" 
+								placeholder="eg. Carrots, Calaloo, Tomatoes, Sweet Potatoe" data-toggle="dropdown" 
+							/>
+							<ul id="dropdown" class="dropdown-menu hidden">
+						    </ul>
+						</div>	
+					</div>
 				</div>
+				
 
 				<div class="form-group">
 					<label for="img_file" class="btn btn-primary" tabindex="2"><i class="fa fa-upload" aria-hidden="true"></i> Upload an image</label>
@@ -65,6 +68,6 @@
 
 
 <!-- <form action="../public/product_names.php" method="POST">
-	<input type="text" name="getThis">
+	<input type="text" name="product_name">
 	<input type="submit" name="">
 </form> -->

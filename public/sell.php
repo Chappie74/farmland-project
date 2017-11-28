@@ -9,7 +9,7 @@
     {
 
     	$img = $_FILES["product_image"];
-        $product_name = $_POST["product_name"]; 
+        $product_name = trim(strtolower($_POST["product_name"])); 
         $category = $_POST["category"];
         $amount = floor($_POST["amount"]);
         $price = abs($_POST["price"]);

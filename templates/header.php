@@ -3,10 +3,11 @@
 <html>
 
     <head>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../public/css/bootstrap.css" rel="stylesheet"/>
         <link href="../public/css/styles.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="../public/css/font-awesome.css">
+        <link rel="stylesheet" href="../public/css/font-awesome.css">                
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <?php 
           if(isset($css))
             echo '<link rel="stylesheet" href="'.$css.'"'. "/>";          
@@ -65,7 +66,7 @@
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit" class="btn btn-info">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">   
                   <li class="dropdown" style="padding:0px">                    

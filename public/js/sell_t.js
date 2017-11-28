@@ -74,13 +74,14 @@ $(document).ready(function() {
 	      {
 
 	          var results = JSON.parse(data);
-
+	          
 	          if(results.length > 0)
 	          {
 	          	$("#dropdown").removeClass("hidden");
 		          for (var i = results.length - 1; i >= 0; i--) 
 		          {
-		          	$("#dropdown").append('<li><a onclick="useSuggestion(this)"> '+results[i]["name"]+'</a></li>');
+
+		          	$("#dropdown").append('<li><a onclick="useSuggestion(this)"> '+results[i]+'</a></li>');
 		          }
 	          }
 
