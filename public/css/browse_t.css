@@ -2,6 +2,8 @@
 {
 	border-radius: 5px;
 	padding:0px;
+	margin-left:50px;
+	
 
 
 }
@@ -49,7 +51,7 @@
 	font-family: 'Archivo Narrow';
 	font-size: 16px;
 	height: 30px;
-	/*border-radius:10px 0px 0px 10px;*/
+	border-radius:10px 0px 0px 10px;
 	padding-right: 2px;
 	padding-left: 2px;
 }
@@ -69,4 +71,9 @@ hr
 #seller
 {
 	font-size: 10px;
+}
+
+.contained
+{
+	width:106%;
 }

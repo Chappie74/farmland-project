@@ -32,18 +32,18 @@
 				</div>
 
 				<div class="row">
-					<div class="form-group col-md-3">
+					<div class="form-group col-md-6">
 						<label for="amount">Amount for sale:</label>
 						<input type="number" name="amount" class="form-control" required tabindex="3" placeholder="Units"  min="1" max="50000"/>				
 					</div>	
 
-					<div class="form-group col-md-3">
+					<div class="form-group col-md-6">
 						<label for="price">Price:</label>	
 						<div class="input-group">
 							<div class="input-group-addon">
 								<i class="fa fa-dollar " aria-hidden="true"></i>
 							</div>
-							<input type="number" name="price" tabindex="4" required class="form-control"  placeholder="Price per Unit"  min="1.00" max="10000000000"/>						
+							<input type="number" name="price" tabindex="4" required class="form-control"  placeholder="Price per Unit"  min="1.00" max="100000"/>						
 						</div>						
 					</div>	
 				</div>

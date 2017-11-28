@@ -28,9 +28,9 @@
 		$category = query($sql, $one["category_id"]);
 		$sql = "SELECT user_id,amount, amount,date_listed,price FROM products_for_sale WHERE product_id = ? LIMIT 1";
 		$listing = query($sql, $one["product_id"]);
-		$sql = "SELECT first_name, last_name FROM users WHERE user_id = ? LIMIT 1";
+		$sql = "SELECT username FROM users WHERE user_id = ? LIMIT 1";
 		$seller = query($sql, $listing[0]["user_id"]);
-		$seller = $seller[0]["first_name"]." ".$seller[0]["last_name"];	 	
+		$seller = $seller[0]["username"];	 	
 		
 		//create a new product object and populate it
 		$product = new Product($one["product_id"],$one["name"],$category[0]["name"],$one["image"],$seller, $listing[0]["date_listed"], $listing[0]["amount"], $listing[0]["price"]);
