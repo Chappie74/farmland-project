@@ -96,11 +96,11 @@
 									<div class="caption">
 										<h4><?php echo $product->name; ?></h4>
 										<p><?php echo $product->category; ?></p>
-										<p>Unit:<?php echo $product->units; ?></p>
+										<p>Units Available:<?php echo $product->units; ?></p>
 										<p>Price:<?php echo $product->price; ?></p>
 										<p>Date listed:<?php echo $product->date_listed; ?></p>
 										<p>Sold By:<?php echo $product->seller; ?></p>
-										<a class="btn btn-mini" href="#" > Add to Cart</a>
+										<a class="btn btn-mini " href="#" ><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
 									</div>
 	                            </div>
 	                        </li>
