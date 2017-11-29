@@ -36,7 +36,7 @@
 
 <script type="text/javascript">
     $(window).on('load',function(){
-      $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
+      $('#loginModal').modal({backdrop: 'static', keyboard: false})
         $('#loginModal').modal('show');
     });
 </script>
@@ -44,14 +44,14 @@
 <!-- Modal -->
   <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">  
+        <div class="modal-header">
 
           <ul class="nav nav-tabs">
             <li class="active"><a href="#login" data-toggle="tab" aria-expanded="false">Log In</a></li>
-            <li class=""><a href="#signup" data-toggle="tab" aria-expanded="true">Sign Up</a></li> 
+            <li class=""><a href="#signup" data-toggle="tab" aria-expanded="true">Sign Up</a></li>
           </ul>
           <br>
           <span class="right text-info">To continue to the site you must first log in or sign up. Thank you.</span>
@@ -77,7 +77,7 @@
                     <div class="col-md-2">
                       <button type="submit" class="btn btn-primary btn-md" name="btn_type" value="login">Log In</button>
                     </div>
-                  </div>                 
+                  </div>
                 </form>
               </div>
 
@@ -95,13 +95,24 @@
                       <div class="form-group">
                         <label for="lot_number">Lot Number</label>
                         <input type="text" name="lot_number" class="form-control signup" tabindex="3" required="required" placeholder="Lot Number" />
-                      </div>                      
+                      </div>
 
                       <div class="form-group">
                         <label for="town">Town</label>
-                        <input type="text" name="town" class="form-control signup" tabindex="5" required="required" placeholder="Town" />
-                      </div>
-
+                        <select class="form-control" name="town" id = "town" tabindex="5" onchange="changeValue();" >
+                          <option value="">--SELECT--</option>
+                          <option value="Anna Regina">Anna Regina</option>
+                          <option value="Bartica">Bartica</option>
+                          <option value="Corriverton">Corriverton / New Amsterdamn </option>
+                          <option value="Fort Wellington">Fort Wellington / Rosignol</option>
+                          <option value="Georgetown">Georgetown </option>
+                          <option value="Lethem">Lethem</option>
+                          <option value="Linden">Linden</option>
+                          <option value="Mabaruma">Mabaruma</option>
+                          <option value="Mahdia">Mahdia</option>
+                        </select>
+                        </div>
+                        <br>
                       <div class="form-group">
                         <label for="phone">Phone Number</label>
                         <input type="text" name="phone" class="form-control signup" tabindex="7" required="required" placeholder="eg. XXX-XXX-XXXX" />
@@ -109,7 +120,7 @@
 
                       <div class="text-warning">Fill out all field to continue.</div>
                     </div>
-                    
+
                     <div class="col-md-6">
 
                       <div class="form-group">
@@ -120,17 +131,17 @@
                       <div class="form-group">
                         <label for="address_line">Address Line</label>
                         <input type="text" name="address_line" class="form-control signup" tabindex="4" required="required" placeholder="Address Line" />
-                      </div>                          
+                      </div>
 
                       <div class="form-group">
+                        <div class = "col-md-13">
                         <label for="region">Region</label>
-                        <select class="form-control" name="region" tabindex="6" >
-                          <?php 
-                            for ($i=1; $i <= 10 ; $i++) { 
-                              echo '<option>'.$i.'</option>';
-                            }                            
-                          ?>
-                        </select> 
+                        </div>
+
+                        <div class = "col-md-3">
+                        <input type ="text" class ="form-control" tabindex = "6" name="region" id ="region" value ="" />
+                        </div>
+
                       </div>
 
                       <div class="row">
@@ -141,8 +152,8 @@
                         <div class="col-md-2"></div>
                       </div>
 
-                    </div>                   
-                  </div>                  
+                    </div>
+                  </div>
 
                   <div class="tab-pane fade in hidden" id="address">
                     <div class="row">
@@ -161,7 +172,7 @@
 
                         <div class="col-md-6">
 
-                          
+
                           <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" id = "password" name="password" class="form-control signup" required="required" placeholder="Password" />
@@ -171,19 +182,19 @@
                             <label for="confirm_password">Confirm Password</label>
                             <input type="password" id = "con_pass" name="confirm_password" class="form-control signup" required="required" placeholder="Confirm Password" />
                             <span class="text-danger"  id = "pass_no_match">Password does not match</span>
-                          </div>                         
+                          </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6">
-                              <div id="back_btn" class="btn btn-info btn-md">Back</div>                              
+                              <div id="back_btn" class="btn btn-info btn-md">Back</div>
                             </div>
                             <div class="col-md-6">
                               <div class="text-warning">Fill out all field to continue.</div>
                             </div>
                         </div>
 
-                    </div> 
+                    </div>
                   </div>
 
                   <br><br>
@@ -192,18 +203,58 @@
                     <div class="col-md-2">
                       <button type="submit" value="signup" name="btn_type" id="signup_submit" disabled="true" class="btn btn-primary btn-md " >Sign Up</button>
                     </div>
-                  </div>  
+                  </div>
 
                 </form>
               </div>
 
-          </div>          	
-        
+          </div>
+
       </div>
-      
+
     </div>
   </div>
 
 </body>
+<script type="text/javascript">
+                function changeValue(){
+                    var option=document.getElementById('town').value;
+
+                    if(option=="Anna Regina"){
+                      document.getElementById('region').value="2";
+                    }
+                    else if(option=="Bartica"){
+                      document.getElementById('region').value="7";
+
+                      }
+                      else if(option=="Corriverton"){
+                        document.getElementById('region').value="6";
+
+                        }
+                        else if(option=="Fort Wellington"){
+                          document.getElementById('region').value="5";
+
+                          }
+                          else if(option=="Georgetown"){
+                            document.getElementById('region').value="4";
+
+                            }
+                            else if(option=="Lethem"){
+                              document.getElementById('region').value="9";
+
+                              }
+                              else if(option=="Linden"){
+                                document.getElementById('region').value="10";
+
+                                }
+                                else if(option=="Mabaruma"){
+                                  document.getElementById('region').value="1";
+
+                                  }
+                                  else if(option=="Mahdia"){
+                                    document.getElementById('region').value="8";
+
+                                    }
+                                  }
+            </script>
 </html>
-  
