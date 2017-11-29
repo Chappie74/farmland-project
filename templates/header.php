@@ -51,8 +51,8 @@
                 </div>
                 <ul class="nav navbar-nav">
                   <li><a href="../public/index.php"><span class="glyphicon glyphicon-home"> Home</span></a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"> Shop</span></a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-info-sign"> Help</span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"> Marketplace</span></a></li>
+                  <li><a href="../public/help_page.php"><span class="glyphicon glyphicon-info-sign"> Help</span></a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                   <div class="form-group">

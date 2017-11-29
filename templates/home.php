@@ -70,7 +70,7 @@
         <img src="../public/img/vegetables.jpg" alt="Most Sold" style="width:100%">
           <a href="#">
             <div class="carousel-caption">
-              <h3>VIEW OUR MOST SOLD PRODUCTS</h3>
+              <h3>VIEW FEATURED PRODUCTS</h3>
             </div>
           </a>
       </div>
