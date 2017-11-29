@@ -1,11 +1,11 @@
 <?php
 // configuration
-    require("../includes/config.php"); 
+    require("../includes/config.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
-    	$user_id = $_SESSION["id"];
-    	$first_name = (string)$_POST['first_name'];
+    $user_id = $_SESSION["id"];
+    $first_name = (string)$_POST['first_name'];
 		$last_name = (string)$_POST['last_name'];
 		$lot_number = (string)$_POST['lot_number'];
 		$address_line = (string)$_POST['address_line'];
@@ -31,9 +31,9 @@
 
 			if($results === false || $a_id === false)
 			{
-				apologize("Something went wrong.");				
+				apologize("Something went wrong.");
 			}
-			$_SESSION['info_update_success'] = 1;			
+			$_SESSION['info_update_success'] = 1;
 			redirect("profile.php");
 		}
     }
@@ -67,7 +67,7 @@
     	apologize("Something went wrong loading user profile;");
     }
 
-    
-    
+
+
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-	
+
 	require("../includes/config.php");
 	$salt = "2a07usesomesillystringfore2uDLvp1Ii2e./U9C8sBjqp8I90dH6hi";
 	//determine whether the form was submitted and which button was pressed. (signup/login)
@@ -18,11 +18,11 @@
 		$cash = 1000000.00;
 		$profile_picture = "img/profilePics/chappie.jpg";
 
-		
+
 		// Check to see if all form data has been set
 		if(isset($first_name) && isset($last_name) && isset($lot_number) && isset($town) && isset($region) && isset($email) && isset($username) && isset($password) && isset($phone))
 		{
-			
+
 			//prepare sql insert statement for addresses first
 			$sql = "INSERT INTO addresses (lot_number, address_line, town, region) VALUES (?, ?, ?, ?)";
 			$address_results = query($sql,$lot_number, $address_line, $town, $region); //execute query
@@ -30,11 +30,11 @@
 
 			if($address_results !== false)
 			{
-				$last_address = query("SELECT LAST_INSERT_ID() AS id"); //retrieve the row of the last inserted item ie address				
+				$last_address = query("SELECT LAST_INSERT_ID() AS id"); //retrieve the row of the last inserted item ie address
 				$address_id = $last_address[0]["id"]; //store the id for that record in variable
-				
+
 				//prepare sql to insert into users next
-				$sql = "INSERT INTO users (first_name, last_name, phone, username, password, email, cash, profile_picture, address_id) VALUES 
+				$sql = "INSERT INTO users (first_name, last_name, phone, username, password, email, cash, profile_picture, address_id) VALUES
 						(?, ?, ?, ?, ?, ?, ?,?, ?)";
 				$rows = query($sql,$first_name, $last_name, $phone, $username, crypt($password, $salt), $email, $cash, $profile_picture, $address_id); //execute query
 
@@ -44,8 +44,8 @@
 					$rows = query("SELECT LAST_INSERT_ID() AS id"); //retrieve last insert id
 					$_SESSION["id"] = $rows[0]["id"]; //store it as session id
 					redirect("index.php"); //reditect to index
-				}	
-				apologize("something went wrong");	
+				}
+				apologize("something went wrong");
 			}
 			apologize("Something went wrong while signing up.");
 		}
@@ -60,8 +60,8 @@
 
 		$sql = "SELECT * FROM users WHERE username = ? OR email = ? AND password = ? LIMIT 1";
 		$rows = query($sql, $username, $username,crypt($password,$salt));
-		
-		
+
+
 		if($rows != [])
 		{
 			$_SESSION["id"] = $rows[0]["user_id"];
@@ -74,4 +74,3 @@
 
 	render("../templates/login_form.php", [] ,true);
 ?>
-
