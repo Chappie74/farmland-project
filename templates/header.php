@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../public/css/font-awesome.css"> 
         <link href='https://fonts.googleapis.com/css?family=Archivo Narrow' rel='stylesheet'>               
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="../public/css/cart.css">
         <?php 
           if(isset($css))
             echo '<link rel="stylesheet" href="'.$css.'"'. "/>";          
@@ -29,6 +30,7 @@
           }
         ?>
         <script src="../public/js/scripts.js"></script>
+        <script src="../public/js/cart.js"></script>
        
 
         <style type="text/css">
@@ -83,5 +85,51 @@
               </div>
             </nav>
 
+            <div class="cart-container"> 
+              <div class="row cart-header">
+                <div class="col-sm-5">
+                  Cart
+                </div>
+                <div class="col-sm-5">
+                  Total:
+                </div>
+                <div class="dropdown">
+                <div class="col-sm-2 text-center " id="ellipsis">                  
+                    <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li><a href="#">Empty Cart</a></li>
+                      <li><a href="#">Check Out</a></li>
+                    </ul>
+                  </div>                  
+                </div>                
+              </div><br>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="row no_left item_details">
+                    <img src="img/product_pics/3ab1468ecca6b4dbde0feabf4299834b18806082.jpg" class="img-responsive thumbnail col-sm-2" height="40" width="40">
+                    <div class="col-sm-10">
+                      This is the items details
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row price_details">
+                  <div class="col-sm-12">
+                    <div class="col-md-7 " >
+                      3.00/Unit
+                    </div>
+                    <div class="col-md-5 plus-minus-container">                      
+                          <div id="minus" class="col-sm-4"><i class="fa fa-minus " style="font-size:14px"></i></div>       
+                          <input class="col-sm-4 text-center" type="number" value="1" id="quantity" name="quantity" min="0" max="100">           
+                          <div id="plus" class="col-sm-4"><i class="fa fa-plus" style="font-size: 14px"></i></div>        
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
     <div class="container-fluid">
         <div class="row">
+
+          

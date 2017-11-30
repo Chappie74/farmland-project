@@ -58,7 +58,7 @@
 					<div class="row ">
 						<span class="col-lg-10">
 							<i class="fa fa-shopping-cart" style="font-size:23px;color: white;"></i>
-							<label style="font-size: 15px; color: white;">&nbsp&nbspAdd to cart</label>
+							<span style="font-size: 15px; color: white; font-weight: bold">&nbsp&nbspAdd to cart</span>
 						</span>
 						<span class="col-lg-2"><i class="fa fa-plus-circle" style="font-size:24px; color: white"></i></span>
 					</div>
