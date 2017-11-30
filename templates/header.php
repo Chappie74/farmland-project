@@ -86,7 +86,7 @@
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Home</a></li>
 
-                  <li><a href="#">Page 1</a></li>
+                 
                 <li><a href="../public/invoice.php">Invoices</a></li>
                   <li><a href="../public/sell.php">Sell</a></li>
                   <li><a href="../public/browse.php">Browse</a></li>
@@ -100,8 +100,8 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">   
                   <li class="dropdown" style="padding:0px">  
-                  <a href="../public/profile.php">               
-                    <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" /></a>
+                               
+                    <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" />
                     <ul class="dropdown-menu">                      
                       <li><a href="../public/profile.php"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>
                       <li><a href="#">Page 1-3</a></li>
