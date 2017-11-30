@@ -123,8 +123,8 @@
                 <div class="col-sm-2 text-center " id="ellipsis">                  
                     <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>
                     <ul class="dropdown-menu dropdown-menu-right">
-                      <li><a href="#">Empty Cart</a></li>
-                      <li><a href="#">Check Out</a></li>
+                      <li><a href="../public/empty_cart.php">Empty Cart</a></li>
+                      <li><a href="" data-toggle="modal" data-target="#myModal">Check Out</a></li>
                     </ul>
                   </div>                  
                 </div>                
@@ -137,28 +137,24 @@
               <div class="row cart-footer">Checkout</div>
 
 
-            </div>
-
-      <script type="text/javascript">
-          $("div[class=total]").each(function(index, el) {
-                                $(this).val("hey");
-                            });
-
-
-      </script>      
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+            </div>   
 
 <div class="container">
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title text-center">Comfirm Purchase</h4>
         </div>
         <div class="modal-body">
-          <p>This is a small modal.</p>
+          Are you sure you want to purchase all items in cart?
+          <div class="row text-center" >   
+          <br>         
+          <button class="btn btn-primary">Yes</button>
+          <button class="btn btn-primary">No</button>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
