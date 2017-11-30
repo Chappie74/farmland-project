@@ -135,7 +135,7 @@
                                 
               </div>
               <div style="height:300px"></div> 
-              <div class="row cart-footer" data-toggle="modal" data-target="#myModal>Checkout</div>
+              <div class="row cart-footer" data-toggle="modal" data-target="#myModal">Checkout</div>
 
 
             </div>   
@@ -153,7 +153,7 @@
           Are you sure you want to purchase all items in cart?
           <div class="row text-center" >   
           <br>         
-          <button class="btn btn-primary"><a href="../public/invoice.php"Yes</button>
+          <button class="btn btn-primary"><a href="../public/invoice.php">Yes</a></button>
           <button class="btn btn-primary"  data-dismiss="modal">No</button>
           </div>
         </div>
