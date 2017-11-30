@@ -105,45 +105,43 @@
               </div><br>
 
               <div id="cart-body">
-                <div class="row" style="overflow-wrap: normal;">
-                  <div class="col-sm-12" ">
-                    <div class="row no_left item_details">
-                      <img src="img/product_pics/3ab1468ecca6b4dbde0feabf4299834b18806082.jpg" class="img-responsive thumbnail col-sm-2" height="40" width="40">
-                      <div class="col-sm-9" style="overflow-wrap: normal;">
-                        <div id="_item_name">
-                          THis is the item name
-                        </div>
-                      </div>                     
-                    </div>
-                    <br>
-                  </div>
-                  
-                  <div class="row price_details">
-                    <div class="col-sm-12">
-                      <div class="col-md-7" >
-                        3.00/Unit
-                      </div>
-                      <div class="col-md-5 plus-minus-container">                      
-                            <div id="minus" class="col-sm-4"><i class="fa fa-minus " style="font-size:14px"></i></div>       
-                            <input class="col-sm-4 text-center" type="number" value="1" id="quantity" name="quantity" min="0" max="100">           
-                            <div id="plus" class="col-sm-4"><i class="fa fa-plus" style="font-size: 14px"></i></div>        
-                      </div>
-                    </div>
-                  </div>
-                  <br>
-                  <div class="row" >
-                    <div class="col-sm-7"></div>
-                    <div class="col-sm-5" style="font-size: 10px;">Remove item</div>
-                     <hr>
-                  </div>
-                </div>
-
-                <div style="height:90px"></div> 
+                                
               </div>
+              <div style="height:300px"></div> 
               <div class="row cart-footer">Checkout</div>
 
 
             </div>
+
+      <script type="text/javascript">
+          $("div[class=total]").each(function(index, el) {
+                                $(this).val("hey");
+                            });
+
+
+      </script>      
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+
+<div class="container">
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>This is a small modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
     <div class="container-fluid">
         <div class="row">

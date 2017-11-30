@@ -120,8 +120,9 @@
 												<input type="hidden" name="i_name" value="<?php echo $product->name; ?>">
 												<input type="hidden" name="i_units" value="<?php echo $product->units; ?>">
 												<input type="hidden" name="i_price" value="<?php echo $product->price; ?>">
-												<input type="hidden" name="i_date" value="<?php echo $product->date_listed; ?>">
 												<input type="hidden" name="i_seller" value="<?php echo $product->seller; ?>">
+												<input type="hidden" name="i_image" value="<?php echo $product->image; ?>">
+
 											</form>
 									</div>
 
