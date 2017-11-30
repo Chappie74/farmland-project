@@ -93,16 +93,15 @@ $(document).ready(function(){
       success : function(purchaseData,saleData){
         console.log(purchaseData);
         console.log(saleData);
-
-
+        
         var id = [];
         var values = [];
 
 
         for(var i in purchaseData){
-          id.push("Product " + purchaseData[i][1]);
+          id.push("Product " + purchaseData[i]); 
 
-          values.push("rf" + purchaseData[i][0][0]);
+          values.push(purchaseData[i][i]);
         }
 
         var chartdata = {
