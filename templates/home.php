@@ -67,7 +67,7 @@
       </div>
 
       <div class="item">
-        <img src="../public/img/vegetables.jpg" alt="Most Sold" style="width:100%">
+        <img src="../public/img/vegetables.jpg" alt="Featured items" style="width:100%">
           <a href="#">
             <div class="carousel-caption">
               <h3>VIEW FEATURED PRODUCTS</h3>
