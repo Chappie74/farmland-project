@@ -1,18 +1,18 @@
 
-$(document).ready(function(){
-    //for switching between the next and back forms in sign up
-    $("#next_btn, #back_btn").click(function(){
-        $("#address").toggleClass("hidden");
-        $("#basic_row").toggleClass("hidden");
-    });
+// $(document).ready(function(){
+//     //for switching between the next and back forms in sign up
+//     $("#next_btn, #back_btn").click(function(){
+//         $("#address").toggleClass("hidden");
+//         $("#basic_row").toggleClass("hidden");
+//     });
 
-    //disables the sign up button unless all inputs has data
-    $("input.signup").each(function () {
-    	$(this).keyup(function () {
-        	$("#signup_submit").prop("disabled", CheckInputs());
-    	});
-	});
-});
+//     //disables the sign up button unless all inputs has data
+//     $("input.signup").each(function () {
+//     	$(this).keyup(function () {
+//         	$("#signup_submit").prop("disabled", CheckInputs());
+//     	});
+// 	});
+// });
 
 
 //check to see if all form input on sign up form is populated
@@ -83,6 +83,56 @@ function filterTable(textbox,container) {
     }
   }
 }
+
+
+
+$(document).ready(function(){
+    $.ajax({
+      url : "http://localhost/farmland-project/public/chart.php",
+      type : "GET",
+      success : function(purchaseData,saleData){
+        console.log(purchaseData);
+        console.log(saleData);
+
+
+        var id = [];
+        var values = [];
+
+
+        for(var i in purchaseData){
+          id.push("Product " + purchaseData[i][1]);
+
+          values.push("rf" + purchaseData[i][0][0]);
+        }
+
+        var chartdata = {
+          labels : id,
+          dataset : [
+                      {
+                        label:"item",
+                        backgroundColor:"rgba(59, 89, 152, 0.75)",
+                        borderColor:"rgba(59, 89, 152, 1)",
+                        pointHoverBackgroundColor:"rgba(59, 89, 152, 1)",
+                        pointHoverBorderColor:"rgba(59, 89, 152, 1)",
+                        data: values
+                      }
+                    ]
+        };
+
+        var ctx = $("#mycanvas");
+
+        var barGraph = new Chart(ctx, {
+          type: 'bar',
+          data: chartdata
+        });
+
+
+      },
+      error : function(purchaseData){
+        console.log("error");
+      }
+    });
+});
 
          
   
