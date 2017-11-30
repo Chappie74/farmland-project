@@ -153,8 +153,8 @@
           Are you sure you want to purchase all items in cart?
           <div class="row text-center" >   
           <br>         
-          <button class="btn btn-primary">Yes</button>
-          <button class="btn btn-primary">No</button>
+          <button class="btn btn-primary"><a href="../public/invoice.php"Yes</button>
+          <button class="btn btn-primary"  data-dismiss="modal">No</button>
           </div>
         </div>
         <div class="modal-footer">
