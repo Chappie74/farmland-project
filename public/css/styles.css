@@ -1,8 +1,14 @@
 /*......................................................BROWSE CSS.............................................................*/
 /* Global */
- a hover:{
- 	text-decoration: none;
+ body{
+  background-color: #F9F9F9;
  }
+
+
+ #card{
+  margin-bottom: 25px;
+ }
+
  .thumbnails li> .fff .caption { 
     background:#fff !important; 
     padding:10px;
@@ -47,7 +53,7 @@ ul.thumbnails {
     color: #999;
 }
 .caption{
-	height: 350px;
+	height: 300px;
 
 }
 
@@ -76,22 +82,32 @@ ul.thumbnails {
 
 
 /* Mobile Only */
+@media (max-width: 1300px) and (min-width: 1000px) {
+
+  #card{
+    width: 26%;
+  }
+    
+}
 @media (max-width: 1000px) and (min-width: 767px) {
 
 	#card{
-		width: 30%;
+		width: 45%;
 	}
     
 }
 @media (max-width: 767px) {
+
     .page-header {
         text-align: center;
     } 
 }
 @media (max-width: 479px) {
+
     .caption {
         word-break: break-all;
     }
+    
 }
 
 
