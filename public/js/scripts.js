@@ -1,4 +1,5 @@
 
+
 // $(document).ready(function(){
 //     //for switching between the next and back forms in sign up
 //     $("#next_btn, #back_btn").click(function(){
@@ -132,7 +133,3 @@ $(document).ready(function(){
       }
     });
 });
-
-         
-  
-

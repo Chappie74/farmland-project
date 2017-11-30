@@ -16,7 +16,7 @@
      */
     function apologize($message)
     {
-        render("apology.php", ["message" => $message]);
+        render("apology.php", ["message" => $message], true);
         exit;
     }
 
@@ -145,7 +145,7 @@
         
         // execute SQL statement
         $results = $statement->execute($parameters);
-
+        
         // return result set's rows, if any
         if ($results !== false)
         {
