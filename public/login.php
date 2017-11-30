@@ -43,7 +43,7 @@
 				{
 					$rows = query("SELECT LAST_INSERT_ID() AS id"); //retrieve last insert id
 					$_SESSION["id"] = $rows[0]["id"]; //store it as session id
-					redirect("index.php"); //reditect to index
+					redirect("invoice.php"); //reditect to index
 				}	
 				apologize("something went wrong");	
 			}

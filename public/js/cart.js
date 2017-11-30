@@ -22,10 +22,11 @@ $(document).ready(function() {
                             addToCart(results);                            
                         });
                 });
+            });           
+
+            $("#cart_link").click(function(event) {
+                $(".cart-container").toggleClass('hidden');
             });
-
-            
-
 
     });
         
