@@ -145,7 +145,7 @@
         
         // execute SQL statement
         $results = $statement->execute($parameters);
-
+        
         // return result set's rows, if any
         if ($results !== false)
         {

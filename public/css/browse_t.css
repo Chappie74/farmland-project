@@ -1,0 +1,98 @@
+/*.card
+{
+	border-radius: 5px;	
+	margin-left: 30px;
+	margin-bottom: 25px;
+	padding: 0px;
+	
+
+
+}
+.card:hover
+{
+	
+	box-shadow: 1px 2px 10px 3px #DF382C;
+	transition: 0.3s box-shadow;
+}
+#card_top
+{
+	
+	padding: 10px;
+}
+
+#card_middle
+{
+	background-color: #F9F3EE;
+}
+
+#card_bottom
+{
+	background-color: #F67A2F;
+	border: 2px solid #F67A2F;
+	border-radius:0px 0px 3px 3px; 
+}
+
+#card_bottom:hover
+{
+	background-color: #e56114;
+	cursor: pointer;
+}
+
+#lower-half
+{
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
+.tag
+{
+	position: absolute;	
+	opacity: 0.8;
+	bottom:0px;
+	right:20px;
+	color: white;
+	border: 1px solid black;
+	border-right: 0px solid black;
+	font-family: 'Archivo Narrow';
+	font-size: 16px;
+	height: 30px;
+	border-radius:10px 0px 0px 10px;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.Fredoka_font
+{
+	font-family: 'Fredoka One', cursive;
+	font-size: 16px;
+	padding-left:20px;
+}
+
+hr
+{
+	border:1px solid #E5E2E1;
+}
+
+#seller
+{
+	font-size: 12px;
+}
+
+.contained
+{
+	width:106%;
+}
+
+#items_sections
+{
+	border-left: 2px solid #EEE3DD;	
+	margin-left: 20px;
+	border-right: 2px solid #EEE3DD;	
+	padding-left: 100px;
+}*/
+
+.caption
+{
+	background-color: red;
+}
