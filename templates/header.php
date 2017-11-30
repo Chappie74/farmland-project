@@ -99,8 +99,9 @@
                   <button type="submit" class="btn btn-info">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">   
-                  <li class="dropdown" style="padding:0px">                    
-                    <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" class="dropdown-toggle" data-toggle="dropdown" />
+                  <li class="dropdown" style="padding:0px">  
+                  <a href="../public/profile.php">               
+                    <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" /></a>
                     <ul class="dropdown-menu">                      
                       <li><a href="../public/profile.php"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>
                       <li><a href="#">Page 1-3</a></li>
