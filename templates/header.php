@@ -3,9 +3,14 @@
 <html>
 
     <head>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../public/css/bootstrap.css" rel="stylesheet"/>
+       <link href="../public/css/bootstrap.css" rel="stylesheet"/>
+
         <link href="../public/css/styles.css" rel="stylesheet"/>
+
+       
+
         <link rel="stylesheet" href="../public/css/font-awesome.css">                
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <?php 
@@ -13,10 +18,23 @@
             echo '<link rel="stylesheet" href="'.$css.'"'. "/>";          
         ?>
 
+
+        <script src="../public/js/jquery-1.10.2.min.js"></script>
+
+        <script src="../public/js/Chart.min.js"></script>
+
+        <script src="../public/js/bootstrap.min.js"></script>
+
+        <script src="../public/js/scripts.js"></script>
+
         <?php if (isset($title)): ?>
+
             <title>Farmland-<?= htmlspecialchars($title) ?></title>
+
         <?php else: ?>
+
             <title>Farmland</title>
+
         <?php endif ?>
 
         <script src="../public/js/jquery-1.10.2.min.js"></script>
@@ -30,11 +48,12 @@
         <script src="../public/js/scripts.js"></script>
        
 
+
         <style type="text/css">
             #profile_pic
             {
                 padding:5px;
-                border-radius: 10px;
+                border-radius: 0px;
                 cursor: pointer;
             }
         </style>
@@ -59,8 +78,10 @@
                 </div>
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Page 1</a></li>
-                  <li><a href="../public/sell.php">Sell</a></li>
+
+                   <li><a href="../public/invoice.php">Invoices</a></li>
+                    <li><a href="../public/sell.php">Sell</a></li>
+
                 </ul>
                 <form class="navbar-form navbar-left">
                   <div class="form-group">
