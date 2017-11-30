@@ -135,7 +135,7 @@
                                 
               </div>
               <div style="height:300px"></div> 
-              <div class="row cart-footer">Checkout</div>
+              <div class="row cart-footer" data-toggle="modal" data-target="#myModal>Checkout</div>
 
 
             </div>   
