@@ -18,6 +18,7 @@
                      
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="../public/css/cart.css">
         <?php 
           if(isset($css))
             echo '<link rel="stylesheet" href="'.$css.'"'. "/>";          
@@ -51,6 +52,7 @@
           }
         ?>
         <script src="../public/js/scripts.js"></script>
+        <script src="../public/js/cart.js"></script>
        
 
 
@@ -109,5 +111,65 @@
               </div>
             </nav>
 
+            <div class="cart-container"> 
+              <div class="row cart-header">
+                <div class="col-sm-5">
+                  Cart
+                </div>
+                <div class="col-sm-5">
+                  Total:
+                </div>
+                <div class="dropdown">
+                <div class="col-sm-2 text-center " id="ellipsis">                  
+                    <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li><a href="#">Empty Cart</a></li>
+                      <li><a href="#">Check Out</a></li>
+                    </ul>
+                  </div>                  
+                </div>                
+              </div><br>
+
+              <div id="cart-body">
+                                
+              </div>
+              <div style="height:300px"></div> 
+              <div class="row cart-footer">Checkout</div>
+
+
+            </div>
+
+      <script type="text/javascript">
+          $("div[class=total]").each(function(index, el) {
+                                $(this).val("hey");
+                            });
+
+
+      </script>      
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+
+<div class="container">
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>This is a small modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <div class="container-fluid">
         <div class="row">
+
+          

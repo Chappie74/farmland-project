@@ -1,4 +1,4 @@
-.card
+/*.card
 {
 	border-radius: 5px;	
 	margin-left: 30px;
@@ -22,7 +22,7 @@
 
 #card_middle
 {
-	
+	background-color: #F9F3EE;
 }
 
 #card_bottom
@@ -30,6 +30,12 @@
 	background-color: #F67A2F;
 	border: 2px solid #F67A2F;
 	border-radius:0px 0px 3px 3px; 
+}
+
+#card_bottom:hover
+{
+	background-color: #e56114;
+	cursor: pointer;
 }
 
 #lower-half
@@ -56,9 +62,9 @@
 	padding-left: 2px;
 }
 
-.atam_font
+.Fredoka_font
 {
-	font-family: 'Atma';
+	font-family: 'Fredoka One', cursive;
 	font-size: 16px;
 	padding-left:20px;
 }
@@ -84,4 +90,4 @@ hr
 	margin-left: 20px;
 	border-right: 2px solid #EEE3DD;	
 	padding-left: 100px;
-}
+}*/
