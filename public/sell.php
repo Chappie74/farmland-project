@@ -47,7 +47,7 @@
 
                     $sql = "INSERT INTO `products_for_sale` (user_id,product_id,amount,date_listed, price) VALUES (?,?,?,CURRENT_DATE(),?)";
                     $results = query($sql, $_SESSION["id"], $last_product_id[0]["id"],$amount,$price);    
-                    redirect("index.php");               
+                    redirect("browse.php");               
                     
                 }else   
                 apologize("File is too large. 1MB limit.");
