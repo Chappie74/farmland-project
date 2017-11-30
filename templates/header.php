@@ -104,29 +104,45 @@
                 </div>                
               </div><br>
 
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="row no_left item_details">
-                    <img src="img/product_pics/3ab1468ecca6b4dbde0feabf4299834b18806082.jpg" class="img-responsive thumbnail col-sm-2" height="40" width="40">
-                    <div class="col-sm-10">
-                      This is the items details
+              <div id="cart-body">
+                <div class="row" style="overflow-wrap: normal;">
+                  <div class="col-sm-12" ">
+                    <div class="row no_left item_details">
+                      <img src="img/product_pics/3ab1468ecca6b4dbde0feabf4299834b18806082.jpg" class="img-responsive thumbnail col-sm-2" height="40" width="40">
+                      <div class="col-sm-9" style="overflow-wrap: normal;">
+                        <div id="_item_name">
+                          THis is the item name
+                        </div>
+                      </div>                     
+                    </div>
+                    <br>
+                  </div>
+                  
+                  <div class="row price_details">
+                    <div class="col-sm-12">
+                      <div class="col-md-7" >
+                        3.00/Unit
+                      </div>
+                      <div class="col-md-5 plus-minus-container">                      
+                            <div id="minus" class="col-sm-4"><i class="fa fa-minus " style="font-size:14px"></i></div>       
+                            <input class="col-sm-4 text-center" type="number" value="1" id="quantity" name="quantity" min="0" max="100">           
+                            <div id="plus" class="col-sm-4"><i class="fa fa-plus" style="font-size: 14px"></i></div>        
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <div class="row price_details">
-                  <div class="col-sm-12">
-                    <div class="col-md-7 " >
-                      3.00/Unit
-                    </div>
-                    <div class="col-md-5 plus-minus-container">                      
-                          <div id="minus" class="col-sm-4"><i class="fa fa-minus " style="font-size:14px"></i></div>       
-                          <input class="col-sm-4 text-center" type="number" value="1" id="quantity" name="quantity" min="0" max="100">           
-                          <div id="plus" class="col-sm-4"><i class="fa fa-plus" style="font-size: 14px"></i></div>        
-                    </div>
+                  <br>
+                  <div class="row" >
+                    <div class="col-sm-7"></div>
+                    <div class="col-sm-5" style="font-size: 10px;">Remove item</div>
+                     <hr>
                   </div>
                 </div>
+
+                <div style="height:90px"></div> 
               </div>
+              <div class="row cart-footer">Checkout</div>
+
+
             </div>
 
     <div class="container-fluid">

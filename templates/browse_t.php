@@ -108,15 +108,21 @@
 									</div>
 
 									<div class="caption">
-
-										<h4><?php echo $product->name; ?></h4>
-										<p><?php echo $product->category; ?></p>
-										<p>Units Available:<?php echo $product->units; ?></p>
-										<p>Price:<?php echo $product->price; ?></p>
-										<p>Date listed:<?php echo $product->date_listed; ?></p>
-										<p>Sold By:<?php echo $product->seller; ?></p>
-										<a class="btn btn-mini " href="#" ><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
-
+										
+											<h4><?php echo $product->name; ?></h4>
+											<p><?php echo $product->category; ?></p>
+											<p>Units Available:<?php echo $product->units; ?></p>
+											<p>Price:<?php echo $product->price; ?></p>
+											<p>Date listed:<?php echo $product->date_listed; ?></p>
+											<p>Sold By:<?php echo $product->seller; ?></p>
+											<form method="POST" action="../public/add_to_cart.php">	
+												<input class="btn btn-default " type="submit" value="Add to cart">																
+												<input type="hidden" name="i_name" value="<?php echo $product->name; ?>">
+												<input type="hidden" name="i_units" value="<?php echo $product->units; ?>">
+												<input type="hidden" name="i_price" value="<?php echo $product->price; ?>">
+												<input type="hidden" name="i_date" value="<?php echo $product->date_listed; ?>">
+												<input type="hidden" name="i_seller" value="<?php echo $product->seller; ?>">
+											</form>
 									</div>
 
 	                            </div>
