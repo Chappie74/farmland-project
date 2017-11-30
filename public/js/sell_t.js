@@ -56,7 +56,7 @@ $(document).ready(function() {
 			$("label[id=status]").removeClass('text-warning text-danger').addClass('text-success');
 			$("label[id=status] > i.fa-check").removeClass('hidden');		
 			$("label[id=status] > i.fa-times").addClass('hidden');
-			$("label[id=status] > span").html("File upload successful ");
+			$("label[id=status] > span").html("Image upload successful ");
 			$("button[type=submit").removeClass('disabled');
 		}		
 	});
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
 });
 
-function useSuggestion(element) 
+function useSuggestion(element) //adds the selected suggestion as the value of the input
 {
 	var name = element.innerHTML;
 	$("input[name=product_name]").val(name); 
