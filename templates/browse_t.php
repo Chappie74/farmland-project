@@ -1,4 +1,4 @@
-<div class="col-md-1 " ></div>
+<!-- <div class="col-md-1 " ></div>
 <div class="col-md-10" id="items_sections">
 <div class="row">	
 	<?php foreach ($products as $product): ?>		
@@ -72,4 +72,61 @@
 
 </div>
 <div class="col-md-1"></div>
+ -->
 
+
+<div class="container">
+
+<div class="col-xs-12">
+
+    <div class="page-header">
+
+        <h3>Browse</h3>
+
+        <p>Fresh produce offered by trusted formers</p>
+
+    </div>
+        
+    <div class="carousel slide" id="myCarousel">
+
+        <div class="carousel-inner">
+
+            <div class="item active">
+
+                    <ul class="thumbnails">
+
+                    	<?php foreach ($products as $product): ?>
+
+	                        <li id="card" class="col-sm-3">
+
+	    						<div class="fff">
+
+									<div class="thumbnail">
+
+										<a href="#"><img src="<?php echo $product->image?>" alt=""></a>
+
+									</div>
+
+									<div class="caption">
+
+										<h4><?php echo $product->name; ?></h4>
+										<p><?php echo $product->category; ?></p>
+										<p>Units Available:<?php echo $product->units; ?></p>
+										<p>Price:<?php echo $product->price; ?></p>
+										<p>Date listed:<?php echo $product->date_listed; ?></p>
+										<p>Sold By:<?php echo $product->seller; ?></p>
+										<a class="btn btn-mini " href="#" ><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
+
+									</div>
+
+	                            </div>
+
+	                        </li>
+	                        
+	                    <?php endforeach;?>
+                        
+                    </ul>
+              </div>                           
+    	</div>      
+	</div>         
+</div>
