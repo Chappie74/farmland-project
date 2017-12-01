@@ -98,7 +98,7 @@
                 </ul>
               </div>
             </nav>
-
+<!-- 
             <div class="cart-container"> 
               <div class="row cart-header">
                 <div class="col-sm-5">
@@ -127,9 +127,9 @@
 
             </div>   
 
-<div class="container">
+<div class="container"> -->
 <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <!-- <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
@@ -149,7 +149,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
