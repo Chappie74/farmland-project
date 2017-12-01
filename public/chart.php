@@ -9,8 +9,8 @@
 
     $amount; 
 
-    $purholder = [];
-    $purchasesname = [];
+    // $purholder = [];
+    // $purchasesname = [];
    
 
     $purchases = [];
@@ -19,17 +19,13 @@
 
      	$amount =  query("SELECT amount FROM purchase_product WHERE product_id = ?", $product["product_id"]);
 
-        foreach ($amount as $amount){
-            
-           
+        $amount = $amount[0]["amount"];
+        
+        echo $amount;
 
-            $purholder[] = $amount;
+       
 
-
-            
-        }
-
-     	$purchasesname[] = $product["name"];
+     	// $purchasesname[] = $product["name"];
 
         
         
@@ -39,34 +35,7 @@
      	
      } 
 
-    // $sales = [];
-
-    // $salholder = [];
-    // $salholder2 = [];
-
-    // foreach ($products as $product){
-
-    //     $amount = query("SELECT amount FROM sell_product WHERE product_id = ? ", $product["product_id"]);
-
-    //     foreach ($amount as $amount){
-            
-    //         $salholder[] = $amount;
-            
-    //         $salholder2 = $salholder;
-    //         unset($salholder); 
-            
-    //     }
-     
-        
-    //  	$salholder2[] = $product["name"];
-
-    //     $sales[] = $salholder2;
-
-        
-
-           
-     	
-    //  } 
+    
 
 
 
@@ -74,11 +43,11 @@
 
 
   
-    print json_encode(array(
-    	'purchaseName' =>$purchasesname,
-        'purchaseAmount' =>$purholder,
-    	// 'saleData'=>$sales, 
-    	));
+    // print json_encode(array(
+    // 	'purchaseName' =>$purchasesname,
+    //     'purchaseAmount' =>$purholder,
+    // 	// 'saleData'=>$sales, 
+    // 	));
     	
     
 	  
