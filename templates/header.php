@@ -42,15 +42,23 @@
 
     <body>  
             <?php
+
                 $sql = "SELECT profile_picture FROM users WHERE user_id = ? LIMIT 1";
+                $sql2 = query("SELECT account_type FROM users WHERE user_id = ? LIMIT 1",$_SESSION["id"]);
+
+                $roll = $sql2[0]["account_type"];
+
+
                 $rows = query($sql,$_SESSION["id"]);
 
                 if($rows[0] != null)
                 {
                     $pp = $rows[0]["profile_picture"];
                 }                              
-                else
-                    $pp = "img/profilePics/chappie.jpg";
+                else{
+                  $pp = "img/profilePics/chappie.jpg";
+                }
+                    
             ?>  
 
             <nav class="navbar navbar-default navbar-static-top">
@@ -98,15 +106,31 @@
 
                       <li><a href="../public/profile.php"><img id="proflie_picture_thumbnail" src=<?php echo "'../public/".$pp."'"; ?>>
 
-                      <span>  View Profile</span></a></li>
+                      <span>View Profile</span></a></li>
 
                       <li class="divider"></li>
 
-                      <li><a href="../public/invoice.php">Invoices</a></li>
+                      <?php if ($roll === "admin"): ?>
 
-                      <li><a href="../public/sales.php">Sales</a></li>
+                        <li><a href="../public/invoice.php">Invoices</a></li>
 
-                      <li><a href="../public/logout.php">Log Out</a></li>
+                        <li><a href="../public/sales.php">Sales</a></li>
+
+                        <li><a href="../public/invoice.php">Manage Users</a></li>
+
+                        <li><a href="../public/invoice.php">Manage Produce</a></li>
+
+                        <li><a href="../public/logout.php">Log Out</a></li>
+
+                      <?php else: ?>
+
+                        <li><a href="../public/invoice.php">Invoices</a></li>
+
+                        <li><a href="../public/sales.php">Sales</a></li>
+
+                        <li><a href="../public/logout.php">Log Out</a></li>
+
+                      <?php endif; ?> 
 
                     </ul>
 
