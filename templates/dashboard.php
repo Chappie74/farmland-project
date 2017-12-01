@@ -57,6 +57,6 @@
 <p class="lead">We enable farmers to sell their highest quality produce. </br>
 We enable customers to purchase the highest quality produce.</br>
 Developed by Sean Singh, Daryl Nelson, Rayad Lackhan, Kevin Williams.</br>
-FARMLAND strives to provide quality food to your table.</p>
+FARMLAND strives to provide quality food for your table.</p>
 
 </div>
