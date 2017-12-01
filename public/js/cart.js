@@ -22,10 +22,11 @@ $(document).ready(function() {
                             addToCart(results);                            
                         });
                 });
+            });           
+
+            $("#cart_link").click(function(event) {
+                $(".cart-container").toggleClass('hidden');
             });
-
-            
-
 
     });
         
@@ -33,7 +34,8 @@ $(document).ready(function() {
 
     function addToCart (item) 
 {
-     $("#cart-body").append('<div class="row" style="overflow-wrap: normal;">'+
+
+  var cart_item = $('<div class="row" style="overflow-wrap: normal;">'+
                   '<div class="col-sm-12" >'+
                     '<div class="row no_left item_details">'+
                       '<img src="'+item.image+'"' + 'class="img-responsive thumbnail col-sm-2" height="40" width="40">'+
@@ -67,7 +69,8 @@ $(document).ready(function() {
                 '</div>'+
 ''+
                 
-              '</div>'
-            );       
-        
-}        
+              '</div>');
+
+$("#cart-body").append(cart_item);       
+
+}

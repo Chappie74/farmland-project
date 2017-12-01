@@ -82,6 +82,7 @@ $(document).ready(function() {
 		          {
 
 		          	$("#dropdown").append('<li><a onclick="useSuggestion(this)"> '+results[i]+'</a></li>');
+		          	
 		          }
 	          }
 

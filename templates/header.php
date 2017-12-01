@@ -5,32 +5,21 @@
     <head>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link href="../public/css/bootstrap.css" rel="stylesheet"/>
-
+       
         <link href="../public/css/styles.css" rel="stylesheet"/>
-
         <link rel="stylesheet" href="../public/css/font-awesome.css"> 
         <link href='https://fonts.googleapis.com/css?family=Archivo Narrow' rel='stylesheet'>               
-
-
-       
-
-                     
-
+        <link href="../public/css/bootstrap.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" type="text/css" href="../public/css/cart.css">
+        <link rel="stylesheet" type="text/css" href="../public/css/cart.css">       
         <?php 
           if(isset($css))
             echo '<link rel="stylesheet" href="'.$css.'"'. "/>";          
         ?>
 
 
-        <script src="../public/js/jquery-1.10.2.min.js"></script>
-
-        <script src="../public/js/Chart.min.js"></script>
-
+        <script src="../public/js/jquery-1.10.2.min.js"></script>        
         <script src="../public/js/bootstrap.min.js"></script>
-
         <script src="../public/js/scripts.js"></script>
 
         <?php if (isset($title)): ?>
@@ -43,15 +32,14 @@
 
         <?php endif ?>
 
-        <script src="../public/js/jquery-1.10.2.min.js"></script>
-        <script src="../public/js/bootstrap.min.js"></script>
+       
         <?php 
           if(isset($script))
           {
               echo '<script type="text/javascript" src="'.$script.'"'. "</script>"; 
           }
         ?>
-        <script src="../public/js/scripts.js"></script>
+        
         <script src="../public/js/cart.js"></script>
        
 
