@@ -27,10 +27,10 @@
 
         <script src="../public/js/jquery-1.10.2.min.js"></script>
 
-        
+        <script src="../public/js/Chart.min.js"></script>
 
         <script src="../public/js/bootstrap.min.js"></script>
-        <script src="../public/js/Chart.min.js"></script>
+
         <script src="../public/js/scripts.js"></script>
 
         <?php if (isset($title)): ?>
@@ -86,7 +86,7 @@
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Home</a></li>
 
-                  
+                  <li><a href="#">Page 1</a></li>
                 <li><a href="../public/invoice.php">Invoices</a></li>
                   <li><a href="../public/sell.php">Sell</a></li>
                   <li><a href="../public/browse.php">Browse</a></li>
@@ -98,12 +98,12 @@
                   </div>
                   <button type="submit" class="btn btn-info">Submit</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right"> 
-                <li id="cart_link"><a href="#">Cart</a></li>  
+                <ul class="nav navbar-nav navbar-right">   
                   <li class="dropdown" style="padding:0px">                    
                     <img id = "profile_pic" src=<?php echo "'../public/".$pp."'"; ?> height="50px" width="70px" class="dropdown-toggle" data-toggle="dropdown" />
                     <ul class="dropdown-menu">                      
-                      <li><a href="../public/profile.php"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>                      
+                      <li><a href="../public/profile.php"><img src="../public/img/user.png" height="25px" width="25px"><span>  View Profile</span></a></li>
+                      <li><a href="#">Page 1-3</a></li>
                       <li><a href="../public/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                     </ul>
                   </li>                 
@@ -111,7 +111,7 @@
               </div>
             </nav>
 
-            <div class="cart-container hidden"> 
+            <div class="cart-container"> 
               <div class="row cart-header">
                 <div class="col-sm-5">
                   Cart
@@ -121,10 +121,10 @@
                 </div>
                 <div class="dropdown">
                 <div class="col-sm-2 text-center " id="ellipsis">                  
-                    <div class="fa fa-ellipsis-v " data-toggle="modal" data-target="#myModal" style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" ></div>
-                    <ul >
+                    <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>
+                    <ul class="dropdown-menu dropdown-menu-right">
                       <li><a href="../public/empty_cart.php">Empty Cart</a></li>
-                      <li><a href="" >Check Out</a></li>
+                      <li><a href="" data-toggle="modal" data-target="#myModal">Check Out</a></li>
                     </ul>
                   </div>                  
                 </div>                
