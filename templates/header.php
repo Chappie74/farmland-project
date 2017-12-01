@@ -114,7 +114,7 @@
               </div>
             </nav>
 
-            <div class="cart-container"> 
+            <div class="cart-container hidden"> 
               <div class="row cart-header">
                 <div class="col-sm-5">
                   Cart
