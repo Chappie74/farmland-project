@@ -100,20 +100,19 @@ $(document).ready(function(){
 
 
         for(var i in purchaseData){
-          id.push("Product " + purchaseData[i]); 
-
-          values.push(purchaseData[i][i]);
+          id.push(purchaseData[i].name); 
+          values.push(purchaseData[i].total);
         }
 
         var chartdata = {
           labels : id,
           dataset : [
                       {
-                        label:"item",
-                        backgroundColor:"rgba(59, 89, 152, 0.75)",
-                        borderColor:"rgba(59, 89, 152, 1)",
-                        pointHoverBackgroundColor:"rgba(59, 89, 152, 1)",
-                        pointHoverBorderColor:"rgba(59, 89, 152, 1)",
+                        label:'item',
+                        backgroundColor:'rgba(59, 89, 152, 0.75)',
+                        borderColor:'rgba(59, 89, 152, 1)',
+                        pointHoverBackgroundColor:'rgba(59, 89, 152, 1)',
+                        pointHoverBorderColor:'rgba(59, 89, 152, 1)',
                         data: values
                       }
                     ]
