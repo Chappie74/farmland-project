@@ -3,6 +3,9 @@
 /* Global */
  body{
   background-color: #F9F9F9;
+  margin:0px;
+  padding: 0px;
+
  }
 /*...................................................INVOICE CSS......................................................*/
 
@@ -56,8 +59,8 @@
 /* Page Header */
 .page-header {
     background: #f9f9f9;
-    margin: -30px -40px 40px;
-    padding: 20px 40px;
+    margin: -30px;
+    padding: 20px;
     border-top: 4px solid #ccc;
     color: #999;
     text-transform: uppercase;
@@ -68,7 +71,7 @@
     color: #000;
 }
 
-ul.thumbnails { 
+.thumbnails { 
     margin-bottom: 0px;
 }
 
@@ -141,7 +144,7 @@ ul.thumbnails {
 }
 
 
-li { list-style-type:none;}
+.container li { list-style-type:none;}
 
 ::selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
 ::-moz-selection { background: #ff5e99; color: #FFFFFF; }
@@ -192,6 +195,7 @@ Image credits: unsplash.com
 }
 .fade-carousel .carousel-inner .item {
     height: 90vh;
+    width: ;
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
@@ -252,6 +256,7 @@ Image credits: unsplash.com
 /********************************/
 .overlay {
     position: absolute;
+    margin: 0px;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -279,6 +284,7 @@ Image credits: unsplash.com
 .fade-carousel .slides .slide-1, 
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
+  width: 100%;  
   height: 100vh;
   background-size: cover;
   background-position: center center;
@@ -306,7 +312,11 @@ Image credits: unsplash.com
 
 
 
-
+.carousel{
+    padding: 0px;
+    margin: 0px;
+    width: 2000px;
+}
 #about_us_paragraph{
     padding-top: 20px;
     text-align: center;
@@ -323,8 +333,9 @@ Image credits: unsplash.com
 
 /*............................................................HEADER CSS.......................................................*/
 
-.navbar{
+.navbar .navbar-default{
     margin-bottom: 0px;
+    padding: 0px;
 }
 
 #profile_pic{
