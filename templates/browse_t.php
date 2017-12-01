@@ -75,9 +75,9 @@
  -->
 
 
-<div class="container">
+<div class="browse-container">
 
-<div class="col-xs-12">
+
 
     <div class="page-header">
 
@@ -136,4 +136,3 @@
               </div>                           
     	</div>      
 	</div>         
-</div>
