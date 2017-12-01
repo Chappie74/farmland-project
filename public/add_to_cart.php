@@ -10,7 +10,7 @@
                 $item_units =$_POST["item_units"];
 
                 class Item {
-                    function Item($name,$image,$seller,$units, $price, $id)
+                    function Item($name,$image,$seller,$units, $price, $id, $user_id)
                     {                        
                         $this->name = $name;
                         $this->image = $image;
@@ -18,13 +18,14 @@
                         $this->units = $units;
                         $this->price = $price;
                         $this->id  = $id;
+                        $this->user_id  = $user_id;
                     }
                 }
 
-                $sql = "INSERT INTO cart (product_name, units, seller, price, image) VALUES (?,?,?,?,?);";
-                $success = query($sql, $item_name, $item_units, $item_seller, $item_price, $item_image);
+                $sql = "INSERT INTO cart (product_name, units, seller, price, image, user_id) VALUES (?,?,?,?,?,?);";
+                $success = query($sql, $item_name, $item_units, $item_seller, $item_price, $item_image,$_SESSION["id"]);
                 $rows = query("SELECT LAST_INSERT_ID() AS id"); //retrieve last insert id
-                $item = new Item($item_name,$item_image, $item_seller, $item_units,$item_price, $rows[0]["id"]);
+                $item = new Item($item_name,$item_image, $item_seller, $item_units,$item_price, $rows[0]["id"],$_SESSION["id"]);
                 
                 echo json_encode($item);
                 exit;

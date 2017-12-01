@@ -30,7 +30,7 @@
 
 }
 
-.plus-minus-container > #quantity
+.plus-minus-container > #c_quantity
 {
 	width: 40%;
 	height: 21px;
@@ -122,6 +122,11 @@
   	hyphens: auto;
   	text-align: center;
   	text-transform:capitalize;
+}
+
+.remove
+{
+	cursor: pointer;
 }
 
 

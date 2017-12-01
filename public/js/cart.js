@@ -1,7 +1,8 @@
+var cart_total = 0;
 $(document).ready(function() {         
     
-            $("form").each(function(index, el) {
-                $(this).submit(function(e){
+            $("form[name=add_to_cart]").each(function(index, el) {
+                $(this).on("submit",function(e){
                     e.preventDefault();
 
                     var item_name = $("input[name=i_name]",this).val();
@@ -18,24 +19,22 @@ $(document).ready(function() {
                         item_image: item_image
 
                     },function(data, textStatus, xhr){
-                            var results = JSON.parse(data);                           
-                            addToCart(results);                            
+                            var results = JSON.parse(data);                                                     
+                            addToCart(results);                         
                         });
                 });
             });           
 
-            $("#cart_link").click(function(event) {
-                $(".cart-container").toggleClass('hidden');
-            });
 
-    });
+
+});
         
 
 
-    function addToCart (item) 
+function addToCart (item) 
 {
-
-  var cart_item = $('<div class="row" style="overflow-wrap: normal;">'+
+  cart_total += parseInt(item.price);
+  var cart_item = $('<div class="row item_block" style="overflow-wrap: normal;">'+
                   '<div class="col-sm-12" >'+
                     '<div class="row no_left item_details">'+
                       '<img src="'+item.image+'"' + 'class="img-responsive thumbnail col-sm-2" height="40" width="40">'+
@@ -51,26 +50,135 @@ $(document).ready(function() {
                   '<div class="row price_details">'+
                     '<div class="col-sm-12">'+
                      '<div class="col-md-7" style="font-size:12px;">'+
-                        'Price/Unit: $'+item.price+
+                        'Price/Unit: $<span>'+item.price+'</span>'+
+                        '<input name ="cart_item_units" class="hidden" value="'+item.units+' ">'+
                       '</div>'+
                       '<div class="col-md-5 plus-minus-container">'+                     
-                            '<div  id="minus" class="col-sm-4"><i class="fa fa-minus minus" style="font-size:14px"></i></div>'+  
-                            '<input class="col-sm-4 text-center" type="number" value="1" id="quantity" name="quantity" min="0" max="100">'+        
-                            '<div id="plus" class="col-sm-4"><i class="fa fa-plus " style="font-size: 14px"></i></div>'+
+                            '<div  id="minus" onclick="changeAmount(this);" class="col-sm-4"><i class="fa fa-minus minus" style="font-size:14px"></i></div>'+  
+                            '<input class="col-sm-4 text-center" type="number" onChange= "updateTotal(this);" value="1" id="c_quantity" name="quantity" min="0" max="1000">'+        
+                            '<div id="plus" onclick="changeAmount(this);" class="col-sm-4"><i class="fa fa-plus " style="font-size: 14px"></i></div>'+
                       '</div>'+
                    '</div>'+
                   '</div> '+
                   
-                  '<div class="row" style="margin-left:0px;" >'+
-                    '<div class="col-sm-7">Total: <div class="total"></div> </div>'+
-                    '<div class="col-sm-5" style="font-size: 10px;"><span class="remove btn-link" id="'+item.id+'"'+ 'href="#">Remove item</span></div>'+
+                  '<div class="row total_display" style="margin-left:0px;" >'+
+                    '<div class="col-sm-8 total">Total:$ <span>'+item.price+'</span> </div>'+
+                    '<div class="col-sm-4" style="font-size: 10px;"><span class="remove btn-link" id="'+item.id+'"'+ 'onclick="removeFromCart(this);"href="#">Remove item</span></div>'+
                      '<hr>'+
                  '</div>'+
-                '</div>'+
 ''+
                 
               '</div>');
 
-$("#cart-body").append(cart_item);       
+$("#cart-body").append(cart_item);  
+$("#cart_total").html(""); 
+$("#cart_total").html(cart_total);     
 
+}
+
+
+            
+
+
+function changeAmount(element) 
+{
+   var currentVal = 0;
+   var quantityDisplay = $(element).siblings("#c_quantity");
+   var quantityDisplayVal = $.trim($(quantityDisplay).val());    
+   var units = parseInt($("input[name=cart_item_units]").val());
+
+    if(quantityDisplayVal == "" || isNaN(quantityDisplayVal))
+    {
+      currentVal = $(quantityDisplay).val("1");
+    }
+
+    currentVal = parseInt($(quantityDisplay).val());
+
+
+    
+    if($(element).attr("id") == "minus")
+    {
+       if((currentVal - 1) == 0)
+      {
+        currentVal = 1;
+      }
+      else
+      {
+
+        currentVal -= 1;
+      }
+    }
+    else
+    {
+      if(currentVal+1 > units || currentVal > units)
+        {
+          currentVal = units;
+        }
+        else
+        currentVal += 1;
+    }
+    
+
+    $(quantityDisplay).val(currentVal);
+
+    
+    updateTotal(quantityDisplay);
+    
+}
+
+
+function updateTotal(quantity) 
+{   
+    var quantityDisplay = $(quantity);
+    var quantityDisplayVal = $.trim($(quantityDisplay).val());
+    var total_el = $(quantityDisplay).parents(".price_details").siblings(".total_display").children('.total').children('span');
+    var price = $(quantityDisplay).parents(".plus-minus-container").prev().children('span');
+    var units = parseInt($("input[name=cart_item_units]").val());
+   
+
+    cart_total = 0;
+
+    if(quantityDisplayVal == "" || isNaN(quantityDisplayVal))
+      {
+        quantityDisplayVal =  $(quantityDisplay).val("1");
+      }
+    if(quantityDisplayVal > units)
+    {
+      quantityDisplayVal = units;
+      $(quantityDisplay).val(units);
+    }  
+    var total = parseInt($(quantityDisplay).val()) * parseInt($(price).html());
+    total_el.html(total);    
+    
+    $('.total').children('span').each(function(index, el) {
+       var val = parseInt($(el).html());
+       cart_total += val;
+    });
+
+    $("#cart_total").html(cart_total);
+
+}
+
+function removeFromCart(el) 
+{
+   var id = $(el).attr("id");
+   var item_total = parseInt($(el).parent().prev().children('span').html());
+    
+    if (id == "empty_cart") 
+    {
+      $.get('../public/remove_from_cart.php?empty=true', function(data) {
+        $("#cart_total").html("0");
+        $("#cart-body").empty();
+      });
+    }
+    else
+    {
+      $.post('../public/remove_from_cart.php', {id: id}, function(data, textStatus, xhr) {
+        $(el).parents(".item_block").remove();
+        cart_total -= item_total;
+        $("#cart_total").html(cart_total);
+      });
+    }
+   
+    
 }

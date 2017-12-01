@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="../public/css/font-awesome.css"> 
         <link href='https://fonts.googleapis.com/css?family=Archivo Narrow' rel='stylesheet'>               
         <link href="../public/css/bootstrap.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="../public/css/cart.css">       
         <?php 
           if(isset($css))
@@ -20,6 +19,7 @@
 
         <script src="../public/js/jquery-1.10.2.min.js"></script>        
         <script src="../public/js/bootstrap.min.js"></script>
+        <script src="../public/js/cart.js"></script>
         <script src="../public/js/scripts.js"></script>
 
         <?php if (isset($title)): ?>
@@ -74,7 +74,7 @@
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Home</a></li>
 
-                  <li><a href="#">Page 1</a></li>
+                  
                 <li><a href="../public/invoice.php">Invoices</a></li>
                   <li><a href="../public/sell.php">Sell</a></li>
                   <li><a href="../public/browse.php">Browse</a></li>
@@ -101,18 +101,18 @@
 
             <div class="cart-container"> 
               <div class="row cart-header">
-                <div class="col-sm-5">
+                <div class="col-sm-2">
                   Cart
                 </div>
-                <div class="col-sm-5">
-                  Total:
+                <div class="col-sm-8" style="padding-left: 5px;" >
+                  Total: $<span id="cart_total">0</span>
                 </div>
                 <div class="dropdown">
                 <div class="col-sm-2 text-center " id="ellipsis">                  
                     <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>
                     <ul class="dropdown-menu dropdown-menu-right">
-                      <li><a href="../public/empty_cart.php">Empty Cart</a></li>
-                      <li><a href="" data-toggle="modal" data-target="#myModal">Check Out</a></li>
+                      <li><a id="empty_cart" onclick="removeFromCart(this);">Empty Cart</a></li>
+                      <li><a  data-toggle="modal" data-target="#myModal">Check Out</a></li>
                     </ul>
                   </div>                  
                 </div>                
