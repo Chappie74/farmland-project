@@ -2,6 +2,7 @@
 	require("../includes/config.php"); 
 	$css = "../public/css/browse_t.css";
 	$script ="../public/js/browse_t.js";
+
 	class Product {
 	    function Product($id, $name, $category, $image,$seller,$date_listed, $units, $price)
 	    {
@@ -15,6 +16,17 @@
 	        $this->price = $price;
 	    }
 	}
+	class Item {
+                    function Item($name,$image,$seller,$units, $price, $id)
+                    {                        
+                        $this->name = $name;
+                        $this->image = $image;
+                        $this->seller = $seller;
+                        $this->units = $units;
+                        $this->price = $price;
+                        $this->id  = $id;
+                    }
+                }
 
 	$all_products = array(); //array to hold all products to send to page
 
@@ -38,5 +50,10 @@
 		array_push($all_products, $product);
 	}
 
-	render("../templates/browse_t.php", ["title" => "Browse", "css" => $css, "script" => $script ,"products"=> $all_products]);
+	$sql = "SELECT item_id, product_name, units, price, seller, image, ava_amt FROM cart WHERE user_id = ?;";
+	$cart_items = query($sql, $_SESSION["id"]);
+
+
+
+	render("../templates/browse_t.php", ["title" => "Browse", "css" => $css, "script" => $script ,"products"=> $all_products, "cart_items" => $cart_items,"cart_total" => 0]);
 ?>

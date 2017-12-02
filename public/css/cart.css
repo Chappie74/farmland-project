@@ -14,7 +14,8 @@
 #cart-body
 {
 	overflow-y: scroll;
-	height: 100%;
+	overflow-x: hidden; 
+	height: 80%;
 
 }
 	
@@ -30,7 +31,7 @@
 
 }
 
-.plus-minus-container > #quantity
+.plus-minus-container > #c_quantity
 {
 	width: 40%;
 	height: 21px;
@@ -122,6 +123,11 @@
   	hyphens: auto;
   	text-align: center;
   	text-transform:capitalize;
+}
+
+.remove
+{
+	cursor: pointer;
 }
 
 

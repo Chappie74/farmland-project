@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 01, 2017 at 01:54 PM
+-- Generation Time: Dec 02, 2017 at 04:04 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -62,8 +62,20 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `price` decimal(65,2) NOT NULL,
   `image` varchar(3000) NOT NULL,
   `seller` varchar(200) NOT NULL,
-  PRIMARY KEY (`item_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=260 DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  `ava_amt` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  PRIMARY KEY (`item_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`item_id`, `product_name`, `units`, `price`, `image`, `seller`, `user_id`, `ava_amt`, `product_id`) VALUES
+(88, 'bora', 5, '2000.00', 'img/product_pics/8ff4fda26ba1ee841099b040c2676c62a2ba7131.jpg', 'me', 9, 50, 42),
+(89, 'potatoes', 1, '2323.00', 'img/product_pics/c81d25a4c9120a136b6c18fdbf1fc5ad9bc6fa46.jpg', 'sean', 9, 2323, 40);
 
 -- --------------------------------------------------------
 
@@ -141,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `image` varchar(3000) NOT NULL,
   PRIMARY KEY (`product_id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
@@ -153,7 +165,7 @@ INSERT INTO `products` (`product_id`, `name`, `category_id`, `image`) VALUES
 (41, 'bana', 1, 'img/product_pics/8fb0e92f946f3f0d6b2415f7ca255c31bec4de37.jpg'),
 (42, 'bora', 4, 'img/product_pics/8ff4fda26ba1ee841099b040c2676c62a2ba7131.jpg'),
 (43, 'pumpkins', 6, 'img/product_pics/f90bce7277d5c4f4b5befe62bc4013971f5aa786.jpeg'),
-(44, 'grape', 1, 'img/product_pics/d24bdb67aed6e252702f562fc66807e07e2a4b0c.jpg');
+(45, 'banana', 1, 'img/product_pics/06c57850fd587465312034ed7306662fd58bd6d7.jpeg');
 
 -- --------------------------------------------------------
 
@@ -172,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `products_for_sale` (
   PRIMARY KEY (`product_for_sale_id`),
   KEY `product_id` (`product_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products_for_sale`
@@ -184,7 +196,7 @@ INSERT INTO `products_for_sale` (`product_for_sale_id`, `user_id`, `product_id`,
 (14, 10, 41, 23, '2017-11-28', '1212.00'),
 (15, 10, 42, 50, '2017-11-28', '2000.00'),
 (16, 10, 43, 676, '2017-11-28', '345.00'),
-(17, 12, 44, 22, '2017-11-30', '12.00');
+(18, 12, 45, 1, '2017-12-01', '22.00');
 
 -- --------------------------------------------------------
 
@@ -253,13 +265,19 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `phone`, `username`, `password`, `email`, `cash`, `profile_picture`, `address_id`, `account_type`) VALUES
-(9, 'Sean', 'Singh', '592-648-7886', 'sean', '2alSlJaAzeyyk', 'seanmsingh7@yahoo.com', '1000000.00', 'img/profilePics/chappie.jpg', 22, 'customer'),
+(9, 'Sean', 'Singh', '592-648-7886', 'sean', '2aw3.NVVJkO4E', 'seanmsingh7@yahoo.com', '1000000.00', 'img/profilePics/chappie.jpg', 22, 'customer'),
 (10, 'me', 'me', '3333', 'me', '2aGZ0MV5eys/k', 'mw@me.com', '1000000.00', 'img/profilePics/chappie.jpg', 23, 'customer'),
 (12, 'Sean', 'Singh', '22222', 'google', '2aGZ0MV5eys/k', 'seanmsin@gmail.com', '1000000.00', 'img/profilePics/chappie.jpg', 25, 'customer');
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `makes_comment`
