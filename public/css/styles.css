@@ -311,6 +311,7 @@ li { list-style-type:none;}
     padding-right: 15px;
     padding-left: 15px;
     padding-top:18px;
+
 }
 
 #proflie_picture_thumbnail{
@@ -318,7 +319,7 @@ li { list-style-type:none;}
     height: 23px; 
     width: 23px;
     border-radius: 20px;
-  padding-bottom: 1px;
+    padding-bottom: 1px;
 }
 
 #cart_icon{
@@ -326,6 +327,12 @@ li { list-style-type:none;}
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 18px;
+}
+
+#cash_amount{
+  margin:0px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 
