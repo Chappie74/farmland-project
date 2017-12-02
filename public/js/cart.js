@@ -10,13 +10,16 @@ $(document).ready(function() {
                     var item_price = $("input[name=i_price]",this).val();
                     var item_seller = $("input[name=i_seller]",this).val();
                     var item_image = $("input[name=i_image]",this).val();
+                    var item_available_amt = $("input[name=i_ava_amt]",this).val();
+
 
                     $.post('../public/add_to_cart.php', {
                         item_name: item_name,
                         item_price: item_price,
                         item_units: item_units,
                         item_seller: item_seller,
-                        item_image: item_image
+                        item_image: item_image,
+                        item_available_amt:  item_available_amt,
 
                     },function(data, textStatus, xhr){
                             var results = JSON.parse(data);                                                     

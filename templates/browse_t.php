@@ -121,6 +121,7 @@
 												<input type="hidden" name="i_price" value="<?php echo $product->price; ?>">
 												<input type="hidden" name="i_seller" value="<?php echo $product->seller; ?>">
 												<input type="hidden" name="i_image" value="<?php echo $product->image; ?>">
+												<input type="hidden" name="i_ava_amt" value="<?php echo $product->units; ?>">
 
 											</form>
 									</div>
@@ -157,7 +158,45 @@
               </div><br>
 
               <div id="cart-body">
-                                
+              	<?php if (!empty($cart_items)):?>
+
+              		<?php foreach ($cart_items as $item): ?>
+		                <div class="row item_block" style="overflow-wrap: normal;">
+		                  <div class="col-sm-12" >
+		                    <div class="row no_left item_details">
+		                      <img src="<?php echo $item["image"];?>" class="img-responsive thumbnail col-sm-2" height="40" width="40">
+		                      <div class="col-sm-9" style="overflow-wrap: normal;">
+		                        <div id="_item_name">
+		                          <?php echo $item["product_name"]; ?>
+		                        </div>
+		                      </div>                   
+		                    </div>
+		                   
+		                 </div>
+		                  
+		                  <div class="row price_details">
+		                    <div class="col-sm-12">
+		                     <div class="col-md-7" style="font-size:12px;">
+		                        Price/Unit: $<span><?php echo $item["price"] ?></span>
+		                        
+		                      </div>
+		                      <div class="col-md-5 plus-minus-container">                 
+		                            <div  id="minus" onclick="changeAmount(this);" class="col-sm-4"><i class="fa fa-minus minus" style="font-size:14px"></i></div>
+		                            <input class="col-sm-4 text-center disabled" type="number" onChange= "updateTotal(this);" value="<?php echo $item["units"]; ?>" id="c_quantity" name="quantity" min="0" max="1000">
+		                            <input name ="cart_item_units" class="hidden" value="<?php echo $item["ava_amt"]?>">
+		                            <div id="plus" onclick="changeAmount(this);" class="col-sm-4"><i class="fa fa-plus " style="font-size: 14px"></i></div>
+		                      </div>
+		                   </div>
+		                  </div>
+		                  
+		                  <div class="row total_display" style="margin-left:0px;" >
+		                   <div class="col-sm-8 total">Total:$ <span><?php echo $item["price"] * $item["units"]?></span> </div>
+		                    <div class="col-sm-4" style="font-size: 10px;"><span class="remove btn-link" id="<?php echo $item["item_id"]; ?>" onclick="removeFromCart(this);" href="#">Remove item</span></div>
+		                     <hr>
+		                 </div>                
+		              </div>
+		            <?php endforeach;?>  
+          		<?php endif; ?>
               </div>
               <div class="row cart-footer">Checkout</div>
             </div>   
