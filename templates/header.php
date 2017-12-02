@@ -110,7 +110,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                <li id="cash_amount" class="nav navbar-nav" ><a href="">$<?= $current_cash ?></a></li>
+                <li id="cash_amount" class="nav navbar-nav" ><a >$<?= $current_cash ?></a></li>
 
                   <li><span id="cart_icon" class="glyphicon glyphicon-shopping-cart" onclick= "javascript:location.href='../public/browse.php'"></span></li>
 
