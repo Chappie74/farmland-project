@@ -73,7 +73,16 @@
 </div>
 <div class="col-md-1"></div>
  -->
-
+<?php 
+	if(!empty($cart_items))
+	{
+		foreach ($cart_items as $item) {
+			$cart_total += $item["units"] * $item["price"]; 
+		}
+	}
+	else
+		$cart_total = 0;
+?>
 
 <div class="container">
 
@@ -110,19 +119,20 @@
 										
 											<h4 class="text-center" style="text-transform:capitalize;"><?php echo $product->name; ?></h4>
 											<p><?php echo $product->category; ?></p>
-											<p>Units Available:<?php echo $product->units; ?></p>
-											<p>Price:<?php echo $product->price; ?></p>
-											<p>Date listed:<?php echo $product->date_listed; ?></p>
-											<p>Sold By:<?php echo $product->seller; ?></p>
+											<p>Units Available: <?php echo $product->units; ?></p>
+											<p>Price: <?php echo $product->price; ?></p>
+											<p>Date listed: <?php echo $product->date_listed; ?></p>
+											<p>Sold By: <?php echo $product->seller; ?></p>
+
 											<form name="add_to_cart" method="POST" action="../public/add_to_cart.php">	
-												<input class="btn btn-default " type="submit" value="Add to cart">																
+												<input class="btn btn-info" name="add_status"  type="submit"  value="Add to cart"
+												id="<?php echo $product->id ?>">																
 												<input type="hidden" name="i_name" value="<?php echo $product->name; ?>">
 												<input type="hidden" name="i_units" value="<?php echo $product->units; ?>">
 												<input type="hidden" name="i_price" value="<?php echo $product->price; ?>">
 												<input type="hidden" name="i_seller" value="<?php echo $product->seller; ?>">
 												<input type="hidden" name="i_image" value="<?php echo $product->image; ?>">
 												<input type="hidden" name="i_ava_amt" value="<?php echo $product->units; ?>">
-
 											</form>
 									</div>
 
@@ -144,7 +154,7 @@
                   Cart
                 </div>
                 <div class="col-sm-8" style="padding-left: 5px;" >
-                  Total: $<span id="cart_total">0</span>
+                  Total: $<span id="cart_total"><?php echo $cart_total?></span>
                 </div>
                 <div class="dropdown">
                 <div class="col-sm-2 text-center " id="ellipsis">                  
@@ -160,7 +170,7 @@
               <div id="cart-body">
               	<?php if (!empty($cart_items)):?>
 
-              		<?php foreach ($cart_items as $item): ?>
+              		<?php foreach ($cart_items as $item): ?>              			
 		                <div class="row item_block" style="overflow-wrap: normal;">
 		                  <div class="col-sm-12" >
 		                    <div class="row no_left item_details">
@@ -211,11 +221,11 @@
           <h4 class="modal-title text-center">Comfirm Purchase</h4>
         </div>
         <div class="modal-body">
-          Are you sure you want to purchase all items in cart?
+          <div class="text-center">Are you sure you want to purchase all items in cart?</div>
           <div class="row text-center" >   
           <br>         
           <button class="btn btn-primary">Yes</button>
-          <button class="btn btn-primary">No</button>
+          <button class="btn btn-primary" data-dismiss="modal">No</button>
           </div>
         </div>
         <div class="modal-footer">

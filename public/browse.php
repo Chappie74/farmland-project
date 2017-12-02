@@ -55,5 +55,5 @@
 
 
 
-	render("../templates/browse_t.php", ["title" => "Browse", "css" => $css, "script" => $script ,"products"=> $all_products, "cart_items" => $cart_items]);
+	render("../templates/browse_t.php", ["title" => "Browse", "css" => $css, "script" => $script ,"products"=> $all_products, "cart_items" => $cart_items,"cart_total" => 0]);
 ?>
