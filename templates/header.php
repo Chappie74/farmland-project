@@ -46,7 +46,7 @@
                 $sql = "SELECT profile_picture FROM users WHERE user_id = ? LIMIT 1";
                 $sql2 = query("SELECT account_type, cash FROM users WHERE user_id = ? LIMIT 1",$_SESSION["id"]);
 
-                $cash = $sql2[0]["cash"];
+                $current_cash = $sql2[0]["cash"];
 
                 $roll = $sql2[0]["account_type"];
 
@@ -98,7 +98,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                <li id="cash_amount" class="nav navbar-nav" ><a href="">$<?= $cash ?></a></li>
+                <li id="cash_amount" class="nav navbar-nav" ><a href="">$<?= $current_cash ?></a></li>
 
                   <li><span id="cart_icon" class="glyphicon glyphicon-shopping-cart" onclick= "javascript:location.href='../public/profile.php'"></span></li>
 
