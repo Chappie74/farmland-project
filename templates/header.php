@@ -118,7 +118,7 @@
 
                         <li><a href="../public/admin_users.php">Manage Users</a></li>
 
-                        <li><a href="#">Manage Produce</a></li>
+                        <li><a href="../public/admin_manage_produce.php">Manage Produce</a></li>
 
                         <li><a href="../public/logout.php">Log Out</a></li>
 

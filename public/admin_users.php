@@ -37,6 +37,8 @@
 			$_SESSION['info_update_success'] = 1;			
 			redirect("admin_users.php");
 		}
+
+
     }
 
    
