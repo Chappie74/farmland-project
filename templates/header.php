@@ -99,57 +99,7 @@
               </div>
             </nav>
 
-            <div class="cart-container"> 
-              <div class="row cart-header">
-                <div class="col-sm-2">
-                  Cart
-                </div>
-                <div class="col-sm-8" style="padding-left: 5px;" >
-                  Total: $<span id="cart_total">0</span>
-                </div>
-                <div class="dropdown">
-                <div class="col-sm-2 text-center " id="ellipsis">                  
-                    <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li><a id="empty_cart" onclick="removeFromCart(this);">Empty Cart</a></li>
-                      <li><a  data-toggle="modal" data-target="#myModal">Check Out</a></li>
-                    </ul>
-                  </div>                  
-                </div>                
-              </div><br>
-
-              <div id="cart-body">
-                                
-              </div>
-              <div style="height:300px"></div> 
-              <div class="row cart-footer">Checkout</div>
-
-
-            </div>   
-
-<div class="container">
-<!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title text-center">Comfirm Purchase</h4>
-        </div>
-        <div class="modal-body">
-          Are you sure you want to purchase all items in cart?
-          <div class="row text-center" >   
-          <br>         
-          <button class="btn btn-primary">Yes</button>
-          <button class="btn btn-primary">No</button>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+            
 
 
 

@@ -13,9 +13,9 @@
     {
         if(isset($_GET["empty"]) && $_GET["empty"] == "true")
         {
-            $sql = "DELETE FROM cart;";
-            $results = query($sql);
-            echo "done";
+            $sql = "DELETE FROM cart WHERE user_id = ?;";
+            $results = query($sql, $_SESSION["id"]);
+            exit;
         } 
     }
 

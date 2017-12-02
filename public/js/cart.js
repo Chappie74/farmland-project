@@ -1,10 +1,10 @@
-var cart_total = 0;
+var cart_total = 0.00;
 $(document).ready(function() {         
     
             $("form[name=add_to_cart]").each(function(index, el) {
                 $(this).on("submit",function(e){
                     e.preventDefault();
-
+                   
                     var item_name = $("input[name=i_name]",this).val();
                     var item_units = $("input[name=i_units]",this).val();
                     var item_price = $("input[name=i_price]",this).val();
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 function addToCart (item) 
 {
-  cart_total += parseInt(item.price);
+  cart_total += parseFloat(item.price);
   var cart_item = $('<div class="row item_block" style="overflow-wrap: normal;">'+
                   '<div class="col-sm-12" >'+
                     '<div class="row no_left item_details">'+
@@ -51,11 +51,12 @@ function addToCart (item)
                     '<div class="col-sm-12">'+
                      '<div class="col-md-7" style="font-size:12px;">'+
                         'Price/Unit: $<span>'+item.price+'</span>'+
-                        '<input name ="cart_item_units" class="hidden" value="'+item.units+' ">'+
+                        
                       '</div>'+
                       '<div class="col-md-5 plus-minus-container">'+                     
                             '<div  id="minus" onclick="changeAmount(this);" class="col-sm-4"><i class="fa fa-minus minus" style="font-size:14px"></i></div>'+  
-                            '<input class="col-sm-4 text-center" type="number" onChange= "updateTotal(this);" value="1" id="c_quantity" name="quantity" min="0" max="1000">'+        
+                            '<input class="col-sm-4 text-center disabled" type="number" onChange= "updateTotal(this);" value="1" id="c_quantity" name="quantity" min="0" max="1000">'+
+                            '<input name ="cart_item_units" class="hidden" value="'+item.units+' ">'+        
                             '<div id="plus" onclick="changeAmount(this);" class="col-sm-4"><i class="fa fa-plus " style="font-size: 14px"></i></div>'+
                       '</div>'+
                    '</div>'+
@@ -71,7 +72,7 @@ function addToCart (item)
               '</div>');
 
 $("#cart-body").append(cart_item);  
-$("#cart_total").html(""); 
+$("#cart_total").html("0"); 
 $("#cart_total").html(cart_total);     
 
 }
@@ -85,11 +86,13 @@ function changeAmount(element)
    var currentVal = 0;
    var quantityDisplay = $(element).siblings("#c_quantity");
    var quantityDisplayVal = $.trim($(quantityDisplay).val());    
-   var units = parseInt($("input[name=cart_item_units]").val());
+   var units = parseInt($(element).siblings("input[name=cart_item_units]").val());
+   
+
 
     if(quantityDisplayVal == "" || isNaN(quantityDisplayVal))
     {
-      currentVal = $(quantityDisplay).val("1");
+      
     }
 
     currentVal = parseInt($(quantityDisplay).val());
@@ -110,32 +113,35 @@ function changeAmount(element)
     }
     else
     {
-      if(currentVal+1 > units || currentVal > units)
+      if((currentVal + 1) > units || currentVal > units)
         {
           currentVal = units;
         }
         else
-        currentVal += 1;
+        {
+            currentVal += 1;
+        }
+        
     }
     
 
     $(quantityDisplay).val(currentVal);
 
     
-    updateTotal(quantityDisplay);
+    updateTotal(quantityDisplay,element);
     
 }
 
 
-function updateTotal(quantity) 
+function updateTotal(quantity,element) 
 {   
     var quantityDisplay = $(quantity);
     var quantityDisplayVal = $.trim($(quantityDisplay).val());
     var total_el = $(quantityDisplay).parents(".price_details").siblings(".total_display").children('.total').children('span');
     var price = $(quantityDisplay).parents(".plus-minus-container").prev().children('span');
-    var units = parseInt($("input[name=cart_item_units]").val());
-   
-
+    var units = parseInt($(element).siblings("input[name=cart_item_units]").val());
+    var item_id = parseInt($(quantityDisplay).parents(".price_details").siblings(".total_display").find(".remove").attr("id"));
+    
     cart_total = 0;
 
     if(quantityDisplayVal == "" || isNaN(quantityDisplayVal))
@@ -147,22 +153,27 @@ function updateTotal(quantity)
       quantityDisplayVal = units;
       $(quantityDisplay).val(units);
     }  
-    var total = parseInt($(quantityDisplay).val()) * parseInt($(price).html());
+    var  total = parseInt($(quantityDisplay).val()) * parseFloat($(price).html());
     total_el.html(total);    
     
     $('.total').children('span').each(function(index, el) {
-       var val = parseInt($(el).html());
+       var val = parseFloat($(el).html());
        cart_total += val;
     });
 
     $("#cart_total").html(cart_total);
+
+    
+    $.get('../public/add_to_cart.php?id='+item_id+'&units='+quantityDisplayVal+"", function(data) {
+      
+    });
 
 }
 
 function removeFromCart(el) 
 {
    var id = $(el).attr("id");
-   var item_total = parseInt($(el).parent().prev().children('span').html());
+   var item_total = parseFloat($(el).parent().prev().children('span').html());
     
     if (id == "empty_cart") 
     {
