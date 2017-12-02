@@ -85,7 +85,7 @@
               <div class="tab-pane fade in" id="signup">
                 <form action="../public/login.php" method="post">
 
-                  <div class="row" id="basic_row">
+                  <div class="row" id="first_pane">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="first_name">First Name</label>
@@ -144,7 +144,7 @@
                     </div>                   
                   </div>                  
 
-                  <div class="tab-pane fade in hidden" id="address">
+                  <div class="tab-pane fade in hidden" id="address_pane">
                     <div class="row">
                         <div class="col-md-6">
 

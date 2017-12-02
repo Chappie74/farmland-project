@@ -30,6 +30,11 @@ $(document).ready(function() {
                         });
                 });
             });
+            $(".checkout").each(function(index, el) {
+              $(this).click(function(event) {
+                checkBalance();
+              });
+            });
 });
         
 
@@ -171,6 +176,7 @@ function updateTotal(quantity,element)
     });
 
     $("#cart_total").html(cart_total);
+   
 
     
     $.get('../public/add_to_cart.php?id='+item_id+'&units='+quantityDisplayVal+"", function(data) {
@@ -210,4 +216,21 @@ function checkIfInCart (el) {
   var p_id = parseInt($(btn).attr("id"));
   $(btn).attr({value:"Added to cart!",disabled:"true"});
 
+}
+
+function checkBalance() {
+  var money = parseInt($("#cash_amount").find("span").html());
+  var cart_total = parseInt($("#cart_total").html());
+  if(money < cart_total)
+  {
+    alert("Insufficient funds. Consider taking some items out of cart.");
+  }
+  else if(cart_total == 0) 
+  {
+    alert("No items in cart!!");
+  }
+  else
+  {
+    $('#checkout_modal').modal('show');
+  }
 }

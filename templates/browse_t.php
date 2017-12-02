@@ -161,7 +161,7 @@
                     <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li><a id="empty_cart" onclick="removeFromCart(this);">Empty Cart</a></li>
-                      <li><a  data-toggle="modal" data-target="#myModal">Check Out</a></li>
+                      <li><a   class="checkout">Check Out</a></li>
                     </ul>
                   </div>                  
                 </div>                
@@ -208,12 +208,12 @@
 		            <?php endforeach;?>  
           		<?php endif; ?>
               </div>
-              <div class="row cart-footer">Checkout</div>
+              <div class="row cart-footer checkout">Checkout</div>
             </div>   
 
 <div class="container">
 <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="checkout_modal" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
@@ -224,7 +224,7 @@
           <div class="text-center">Are you sure you want to purchase all items in cart?</div>
           <div class="row text-center" >   
           <br>         
-          <button class="btn btn-primary">Yes</button>
+          <a href="../public/checkout.php"><button class="btn btn-primary">Yes</button></a>
           <button class="btn btn-primary" data-dismiss="modal">No</button>
           </div>
         </div>
