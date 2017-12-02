@@ -95,6 +95,7 @@ function CheckInputs() {
 //         console.log(purchaseData);
 //         console.log(saleData);
         
+<<<<<<< HEAD
 //         var id = [];
 //         var values = [];
 
@@ -133,3 +134,42 @@ function CheckInputs() {
 //       }
 //     });
 // });
+=======
+        var id = [];
+        var values = [];
+
+
+        for(var i in purchaseData){
+          id.push(purchaseData[i].name); 
+          values.push(purchaseData[i].total);
+        }
+
+        var chartdata = {
+          labels : id,
+          dataset : [
+                      {
+                        label:'item',
+                        backgroundColor:'rgba(59, 89, 152, 0.75)',
+                        borderColor:'rgba(59, 89, 152, 1)',
+                        pointHoverBackgroundColor:'rgba(59, 89, 152, 1)',
+                        pointHoverBorderColor:'rgba(59, 89, 152, 1)',
+                        data: values
+                      }
+                    ]
+        };
+
+        var ctx = $("#mycanvas");
+
+        var barGraph = new Chart(ctx, {
+          type: 'bar',
+          data: chartdata
+        });
+
+
+      },
+      error : function(purchaseData){
+        console.log("error");
+      }
+    });
+});
+>>>>>>> ADMIN

@@ -24,10 +24,19 @@
     margin-top: 20px;
 }
 
+/*...................................................ADMIN USERS CSS......................................................*/
+
+#admin_users_container{
+    width: 99%;
+    padding-left: .5%;
+    padding-right: .5%;
+    margin-top: 20px;
+}
+
 /*...................................................CHART CSS......................................................*/
 
 .chart-container{
-	width: 70%;
+	width: 650px;
 	height: auto;
 }
 
@@ -84,7 +93,7 @@
     color: black;
 }
 .caption{
-	height: 270px;
+	height: 280px;
 }
 
 

@@ -132,9 +132,9 @@
 
                         <li><a href="../public/sales.php">Sales</a></li>
 
-                        <li><a href="../public/invoice.php">Manage Users</a></li>
+                        <li><a href="../public/admin_users.php">Manage Users</a></li>
 
-                        <li><a href="../public/invoice.php">Manage Produce</a></li>
+                        <li><a href="../public/admin_manage_produce.php">Manage Produce</a></li>
 
                         <li><a href="../public/logout.php">Log Out</a></li>
 
@@ -143,6 +143,8 @@
                         <li><a href="../public/invoice.php">Invoices</a></li>
 
                         <li><a href="../public/sales.php">Sales</a></li>
+
+                        <li><a href="#">Manage Produce</a></li>
 
                         <li><a href="../public/logout.php">Log Out</a></li>
 
