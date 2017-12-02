@@ -31,9 +31,6 @@
         <?php else: ?>
             <title>Farmland</title>
         <?php endif ?>
-
-        <script src="../public/js/jquery-1.10.2.min.js"></script>
-        <script src="../public/js/bootstrap.min.js"></script>
         <?php 
           if(isset($script))
           {
@@ -115,7 +112,7 @@
 
                 <li id="cash_amount" class="nav navbar-nav" ><a href="">$<?= $current_cash ?></a></li>
 
-                  <li><span id="cart_icon" class="glyphicon glyphicon-shopping-cart" onclick= "javascript:location.href='../public/profile.php'"></span></li>
+                  <li><span id="cart_icon" class="glyphicon glyphicon-shopping-cart" onclick= "javascript:location.href='../public/browse.php'"></span></li>
 
                   <li class="dropdown">
 
