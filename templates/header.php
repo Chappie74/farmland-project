@@ -144,8 +144,6 @@
 
                         <li><a href="../public/sales.php">Sales</a></li>
 
-                        <li><a href="#">Manage Produce</a></li>
-
                         <li><a href="../public/logout.php">Log Out</a></li>
 
                       <?php endif; ?> 
