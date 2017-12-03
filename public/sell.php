@@ -45,7 +45,7 @@
                     $last_product_id = query("SELECT LAST_INSERT_ID() AS id");
                     
 
-                    $sql = "INSERT INTO `products_for_sale` (user_id,product_id,amount,date_listed, price) VALUES (?,?,?,CURRENT_DATE(),?)";
+                    $sql = "INSERT INTO products_for_sale (user_id,product_id,amount,date_listed, price) VALUES (?,?,?,CURRENT_DATE(),?)";
                     $results = query($sql, $_SESSION["id"], $last_product_id[0]["id"],$amount,$price);    
                     redirect("index.php");               
                     
