@@ -31,7 +31,7 @@
 				 "date" => $row["date_purchased"],
 				 "units" => $row["amount"],
 				 "product" => $b,
-				 "total" => $c * $row["amount"],
+				 "total" => $c,
 				 "client" => $d,
 				 
 				 ];
