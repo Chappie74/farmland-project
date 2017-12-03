@@ -1,7 +1,6 @@
 <?php
 // configuration
     require("../includes/config.php"); 
-
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
     	$user_id = $_SESSION["id"];
@@ -60,6 +59,7 @@
 
     if($user_info != [] || $address_info != [] )
     {
+        
     	render("../templates/profile_t.php",["first_name" => $first_name, "last_name" => $last_name, "email" => $email, "town" => $town, "lot_number" => $lot_number, "phone" => $phone, "address_line" => $address_line, "region" => $region]);
     }
     else

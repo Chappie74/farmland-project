@@ -1,9 +1,13 @@
 <?php 
 	
-	if($_SESSION['info_update_success'] == 1)
-	{		
-		echo "<script type='text/javascript'>alert('You information has been updated successfully.');</script>";	
-		$_SESSION['info_update_success'] = 0;	
+	if(isset($_SESSION["info_update_success"]))
+	{	
+		if($_SESSION["info_update_success"])
+		{
+			echo "<script type='text/javascript'>alert('You information has been updated successfully.');</script>";	
+			$_SESSION['info_update_success'] = 0;
+		}
+			
 	}
 ?>
 
