@@ -31,11 +31,11 @@
 			#calculate that seller's total gain
 			$total_seller_gain += $value["price"] * $value["units"];
 			#insert into the sell table
-			$sql = "INSERT INTO sell_product (user_id, product_id, date_sold, amount, total) VALUES (?,?,CURRENT_DATE(),?,?);";
-			$done =  query($sql, $seller_id[0]["user_id"], $value["product_id"], $value["units"], $value["price"] * $value["units"]);	
+			$sql = "INSERT INTO sell_product (user_id, product_id, date_sold, amount, total,buyer_id) VALUES (?,?,CURRENT_DATE(),?,?,?);";
+			$done =  query($sql, $seller_id[0]["user_id"], $value["product_id"], $value["units"], $value["price"] * $value["units"],$_SESSION["id"]);	
 			#insert into the purchase table
-			$sql = "INSERT INTO purchase_product (user_id, product_id, date_purchased, amount, total) VALUES (?,?,CURRENT_DATE(),?,?);";
-			$done =  query($sql, $_SESSION["id"], $value["product_id"], $value["units"], $value["price"] * $value["units"]);
+			$sql = "INSERT INTO purchase_product (user_id, product_id, date_purchased, amount, total,seller_id) VALUES (?,?,CURRENT_DATE(),?,?,?);";
+			$done =  query($sql, $_SESSION["id"], $value["product_id"], $value["units"], $value["price"] * $value["units"],$seller_id[0]["user_id"]);
 
 			#update the items for sale table
 			$sql  = "UPDATE products_for_sale SET amount = amount - ? WHERE product_id = ?;";
