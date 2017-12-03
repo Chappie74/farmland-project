@@ -6,21 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../public/css/bootstrap.css" rel="stylesheet"/>
 
-               
+
 
         <link href="../public/css/styles.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="../public/css/font-awesome.css">                
+        <link rel="stylesheet" href="../public/css/font-awesome.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="../public/css/cart.css">
 
-        <?php 
+        <?php
           if(isset($css))
-            echo '<link rel="stylesheet" href="'.$css.'"'. "/>";          
+            echo '<link rel="stylesheet" href="'.$css.'"'. "/>";
         ?>
 
 
 
-        <script src="../public/js/jquery-1.10.2.min.js"></script>        
+        <script src="../public/js/jquery-1.10.2.min.js"></script>
         <script src="../public/js/bootstrap.min.js"></script>
         <script src="../public/js/cart.js"></script>
         <script src="../public/js/scripts.js"></script>
@@ -31,14 +31,14 @@
         <?php else: ?>
             <title>Farmland</title>
         <?php endif ?>
-        <?php 
+        <?php
           if(isset($script))
           {
-              echo '<script type="text/javascript" src="'.$script.'"'. "</script>"; 
+              echo '<script type="text/javascript" src="'.$script.'"'. "</script>";
           }
         ?>
         <script src="../public/js/scripts.js"></script>
-       
+
 
         <style type="text/css">
             #profile_pic
@@ -50,7 +50,7 @@
         </style>
     </head>
 
-    <body>  
+    <body>
             <?php
 
                 $sql = "SELECT profile_picture FROM users WHERE user_id = ? LIMIT 1";
@@ -66,12 +66,12 @@
                 if($rows[0] != null)
                 {
                     $pp = $rows[0]["profile_picture"];
-                }                              
+                }
                 else{
                   $pp = "img/profilePics/chappie.jpg";
                 }
-                    
-            ?>  
+
+            ?>
 
             <nav class="navbar navbar-default navbar-static-top">
 
@@ -96,17 +96,6 @@
                 </ul>
 
 
-                <form class="navbar-form navbar-left">
-
-                  <div class="form-group">
-
-                    <input type="text" class="form-control" placeholder="Search">
-
-                  </div>
-
-                  <button type="submit" class="btn btn-info">Search</button>
-
-                </form>
 
                 <ul class="nav navbar-nav navbar-right">
 
@@ -116,9 +105,9 @@
 
                   <li class="dropdown">
 
-                    <span id="profile_dropdown_icon" class="dropdown-toggle glyphicon glyphicon-chevron-down"  data-toggle="dropdown"></span>  
+                    <span id="profile_dropdown_icon" class="dropdown-toggle glyphicon glyphicon-chevron-down"  data-toggle="dropdown"></span>
 
-                    <ul class="dropdown-menu"> 
+                    <ul class="dropdown-menu">
 
                       <li><a href="../public/profile.php"><img id="proflie_picture_thumbnail" src=<?php echo "'../public/".$pp."'"; ?>>
 
@@ -146,7 +135,7 @@
 
                         <li><a href="../public/logout.php">Log Out</a></li>
 
-                      <?php endif; ?> 
+                      <?php endif; ?>
 
                     </ul>
 
@@ -158,8 +147,6 @@
 
             </nav>
 
-            
+
     <div class="container-fluid">
         <div class="row">
-
-          
