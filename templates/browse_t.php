@@ -149,6 +149,7 @@
 </div>
 
 <div class="cart-container"> 
+			
               <div class="row cart-header">
                 <div class="col-sm-2">
                   Cart

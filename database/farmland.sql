@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 02, 2017 at 04:04 PM
+-- Generation Time: Dec 03, 2017 at 05:13 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -36,17 +36,16 @@ CREATE TABLE IF NOT EXISTS `addresses` (
   `town` varchar(100) NOT NULL,
   `region` varchar(10) NOT NULL,
   PRIMARY KEY (`address_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `addresses`
 --
 
 INSERT INTO `addresses` (`address_id`, `lot_number`, `address_line`, `town`, `region`) VALUES
-(22, '2b', 'Grant Scheme', 'Georgetown', '1'),
-(23, 'me', 'me', 'me', '1'),
-(24, '2b', 'abc', 'georgetown', '1'),
-(25, '2b', 'abc', 'georgetown', '1');
+(26, 'abc', 'xyz', 'Georgetown', '1'),
+(27, 'xyz ', 'abc', 'New town', '3'),
+(28, 'axc', 'cxa', 'Old town', '1');
 
 -- --------------------------------------------------------
 
@@ -67,15 +66,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`item_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`item_id`, `product_name`, `units`, `price`, `image`, `seller`, `user_id`, `ava_amt`, `product_id`) VALUES
-(88, 'bora', 5, '2000.00', 'img/product_pics/8ff4fda26ba1ee841099b040c2676c62a2ba7131.jpg', 'me', 9, 50, 42),
-(89, 'potatoes', 1, '2323.00', 'img/product_pics/c81d25a4c9120a136b6c18fdbf1fc5ad9bc6fa46.jpg', 'sean', 9, 2323, 40);
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -153,19 +144,18 @@ CREATE TABLE IF NOT EXISTS `products` (
   `image` varchar(3000) NOT NULL,
   PRIMARY KEY (`product_id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`product_id`, `name`, `category_id`, `image`) VALUES
-(39, 'carrots', 6, 'img/product_pics/3ab1468ecca6b4dbde0feabf4299834b18806082.jpg'),
-(40, 'potatoes', 6, 'img/product_pics/c81d25a4c9120a136b6c18fdbf1fc5ad9bc6fa46.jpg'),
-(41, 'bana', 1, 'img/product_pics/8fb0e92f946f3f0d6b2415f7ca255c31bec4de37.jpg'),
-(42, 'bora', 4, 'img/product_pics/8ff4fda26ba1ee841099b040c2676c62a2ba7131.jpg'),
-(43, 'pumpkins', 6, 'img/product_pics/f90bce7277d5c4f4b5befe62bc4013971f5aa786.jpeg'),
-(45, 'banana', 1, 'img/product_pics/06c57850fd587465312034ed7306662fd58bd6d7.jpeg');
+(46, 'carrots', 6, 'img/product_pics/72d5ec5cbe5e550736d144a21261ab86d7f3d072.jpg'),
+(47, 'potatoes', 11, 'img/product_pics/f16ed6810f6cb68f19ee6d4097ba316ae95dce17.jpg'),
+(48, 'tulips', 5, 'img/product_pics/b57caea937a697d66940b4c8a6a721cd79fc10d6.jpg'),
+(49, 'jellyfish', 2, 'img/product_pics/48427d72f66c0ce4e8e6d09fcc9b607acd644e94.jpg'),
+(50, 'pumpkin', 6, 'img/product_pics/19ec2dcf7f3eb1fed570e66fc342aaff28f806b3.jpeg');
 
 -- --------------------------------------------------------
 
@@ -184,19 +174,18 @@ CREATE TABLE IF NOT EXISTS `products_for_sale` (
   PRIMARY KEY (`product_for_sale_id`),
   KEY `product_id` (`product_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products_for_sale`
 --
 
 INSERT INTO `products_for_sale` (`product_for_sale_id`, `user_id`, `product_id`, `amount`, `date_listed`, `price`) VALUES
-(12, 9, 39, 22, '2017-11-27', '222.00'),
-(13, 9, 40, 2323, '2017-11-27', '2323.00'),
-(14, 10, 41, 23, '2017-11-28', '1212.00'),
-(15, 10, 42, 50, '2017-11-28', '2000.00'),
-(16, 10, 43, 676, '2017-11-28', '345.00'),
-(18, 12, 45, 1, '2017-12-01', '22.00');
+(19, 15, 46, 0, '2017-12-02', '10.00'),
+(20, 15, 47, 935, '2017-12-02', '20.00'),
+(21, 15, 48, -6, '2017-12-02', '33.00'),
+(22, 13, 49, 15, '2017-12-02', '100.00'),
+(23, 13, 50, 53, '2017-12-02', '33.00');
 
 -- --------------------------------------------------------
 
@@ -212,10 +201,11 @@ CREATE TABLE IF NOT EXISTS `purchase_product` (
   `date_purchased` datetime NOT NULL,
   `amount` int(11) NOT NULL,
   `total` decimal(64,2) NOT NULL,
+  `seller_id` int(11) NOT NULL,
   PRIMARY KEY (`purchase_product_id`),
   KEY `product_id` (`product_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -231,10 +221,11 @@ CREATE TABLE IF NOT EXISTS `sell_product` (
   `date_sold` datetime NOT NULL,
   `amount` int(11) NOT NULL,
   `total` decimal(64,2) NOT NULL,
+  `buyer_id` int(11) NOT NULL,
   PRIMARY KEY (`sell_product_id`),
   KEY `product_id` (`product_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -258,16 +249,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username` (`username`),
   KEY `address_id` (`address_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COMMENT='This table stores the user data ';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COMMENT='This table stores the user data ';
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `phone`, `username`, `password`, `email`, `cash`, `profile_picture`, `address_id`, `account_type`) VALUES
-(9, 'Sean', 'Singh', '592-648-7886', 'sean', '2aw3.NVVJkO4E', 'seanmsingh7@yahoo.com', '1000000.00', 'img/profilePics/chappie.jpg', 22, 'customer'),
-(10, 'me', 'me', '3333', 'me', '2aGZ0MV5eys/k', 'mw@me.com', '1000000.00', 'img/profilePics/chappie.jpg', 23, 'customer'),
-(12, 'Sean', 'Singh', '22222', 'google', '2aGZ0MV5eys/k', 'seanmsin@gmail.com', '1000000.00', 'img/profilePics/chappie.jpg', 25, 'customer');
+(13, 'Sean', 'Singh', '222-222-2222', 'sean', '2alSlJaAzeyyk', 'sean@sean.com', '1000000.00', 'img/profilePics/chappie.jpg', 26, 'admin'),
+(14, 'John', 'Doe', '222-000-0002', 'john', '2aQC12FCJC7N.', 'john@john.com', '1000000.00', 'img/profilePics/chappie.jpg', 27, 'customer'),
+(15, 'Mary', 'Jane', '222-333-3333', 'mary', '2axhNOORCIRxM', 'mary@mary.com', '1000000.00', 'img/profilePics/chappie.jpg', 28, 'customer');
 
 --
 -- Constraints for dumped tables
