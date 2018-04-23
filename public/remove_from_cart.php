@@ -5,7 +5,7 @@
 	{
         $cart_id = $_POST["id"];
         $sql = "DELETE FROM cart WHERE item_id = ? LIMIT 1";
-        $results = query($sql, $cart_id);
+        $results = $database->query($sql, $cart_id);
 
         echo "success";
 	}
@@ -14,7 +14,7 @@
         if(isset($_GET["empty"]) && $_GET["empty"] == "true")
         {
             $sql = "DELETE FROM cart WHERE user_id = ?;";
-            $results = query($sql, $_SESSION["id"]);
+            $results = $database->query($sql, $_SESSION["id"]);
             exit;
         } 
     }

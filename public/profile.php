@@ -17,14 +17,14 @@
 		{
 			//isnert the information for the users table
 			$sql = "UPDATE users SET first_name = ?, last_name = ?, email = ?,phone = ? WHERE user_id = ?;";
-			$results = query($sql, $first_name, $last_name, $email, $phone, $user_id);
+			$results = $database->query($sql, $first_name, $last_name, $email, $phone, $user_id);
 
 			//search for the user's address id
 			$sql = "SELECT address_id FROM users where user_id = ? LIMIT 1;";
-			$a_id = query($sql, $_SESSION['id']);
+			$a_id = $database->query($sql, $_SESSION['id']);
 
 			$sql = "UPDATE addresses SET address_line = ?, town = ?, lot_number = ?, region = ? WHERE address_id = ?;";
-            $results = query($sql, $address_line, $town, $lot_number, $region, $a_id[0]["address_id"]);
+            $results = $database->query($sql, $address_line, $town, $lot_number, $region, $a_id[0]["address_id"]);
 
 
 
@@ -41,11 +41,11 @@
 
     // Query for user information
     $sql = "SELECT first_name, last_name, address_id, email, phone FROM users WHERE user_id = ? LIMIT 1";
-    $user_info = query($sql, $_SESSION['id']);
+    $user_info = $database->query($sql, $_SESSION['id']);
 
     //Query for user address information
     $sql = "SELECT * FROM addresses WHERE address_id = ? LIMIT 1";
-    $address_info = query($sql,$user_info[0]['address_id']);
+    $address_info = $database->query($sql,$user_info[0]['address_id']);
 
     $first_name = $user_info[0]['first_name'];
     $last_name = $user_info[0]['last_name'];

@@ -16,6 +16,9 @@
     // requirements
     require("constants.php");
     require("functions.php");
+    require("classes.php");
+
+    $database = new Database();
 
     // enable sessions
     session_start();

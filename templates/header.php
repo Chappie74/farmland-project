@@ -4,7 +4,7 @@
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../public/css/bootstrap.css" rel="stylesheet"/>
+        <link href="../public/css/bootstrap3-cyborg.css" rel="stylesheet"/>
 
 
 
@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="../public/css/cart.css">
 
         <?php
+          $database = new Database();
           if(isset($css))
             echo '<link rel="stylesheet" href="'.$css.'"'. "/>";
         ?>
@@ -54,14 +55,14 @@
             <?php
 
                 $sql = "SELECT profile_picture FROM users WHERE user_id = ? LIMIT 1";
-                $sql2 = query("SELECT account_type, cash FROM users WHERE user_id = ? LIMIT 1",$_SESSION["id"]);
+                $sql2 = $database->query("SELECT account_type, cash FROM users WHERE user_id = ? LIMIT 1",$_SESSION["id"]);
 
                 $current_cash = $sql2[0]["cash"];
 
                 $roll = $sql2[0]["account_type"];
 
 
-                $rows = query($sql,$_SESSION["id"]);
+                $rows = $database->query($sql,$_SESSION["id"]);
 
                 if($rows[0] != null)
                 {

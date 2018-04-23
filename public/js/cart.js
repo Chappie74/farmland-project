@@ -234,3 +234,18 @@ function checkBalance() {
     $('#checkout_modal').modal('show');
   }
 }
+
+function toggleCart (val) {
+  if(val == "0")
+  {
+    $(".cart-container").slideUp('fast', function() {
+      $('#toggle').toggleClass('hidden');
+    });
+  }
+  else {
+    $(".cart-container").slideDown('fast', function() {
+      $('#toggle').toggleClass('hidden');
+    });
+  }
+  
+}

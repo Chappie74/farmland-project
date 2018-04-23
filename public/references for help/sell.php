@@ -12,7 +12,7 @@
 
 		
 		$sql = "SELECT * FROM assets WHERE id = ? AND symbol = \"{$symbol}\";"; //prepare sql statement to find a particular  user and his/her shares
-		$rows = query($sql, $_SESSION['id']); //execute the query
+		$rows = $database->query($sql, $_SESSION['id']); //execute the $database->query
 		$currentShares = (int)$rows[0]["shares"]; //amount of shares user currently has 
 
 		//check to see if user is trying to more than current shares or 0 and less  shares
@@ -21,24 +21,24 @@
 			apologize("Trying to sell invalid amount. Please try again.");
 		}
 
-		$sql = "UPDATE assets SET shares = shares - {$sharesToSell} WHERE id = ? AND symbol = \"{$symbol}\"; "; //prepare shares deduction query
-		$OK = query($sql, $_SESSION['id']); //execute query
+		$sql = "UPDATE assets SET shares = shares - {$sharesToSell} WHERE id = ? AND symbol = \"{$symbol}\"; "; //prepare shares deduction $database->query
+		$OK = $database->query($sql, $_SESSION['id']); //execute $database->query
 
 		
-		if($OK === false) //if query not successful
+		if($OK === false) //if $database->query not successful
 		{
 			apologize("Something went wrong in deducting shares from user. Try again.");
 		}
 
 
-		$sql = "UPDATE users SET cash = cash + {$income} WHERE id = ?;"; //prepare cash increase query
-		$OK = query($sql, $_SESSION["id"]); //execute query
+		$sql = "UPDATE users SET cash = cash + {$income} WHERE id = ?;"; //prepare cash increase $database->query
+		$OK = $database->query($sql, $_SESSION["id"]); //execute $database->query
 
-		if ($OK === false) //if query not successful
+		if ($OK === false) //if $database->query not successful
 		{
 			//restore shares once deleted
-			$sql = "UPDATE assets SET shares = shares + {$sharesToSell} WHERE id = ? \"{$symbol}\";"; //prepare shares addition query
-			$OK = query($sql, $_SESSION['id']);
+			$sql = "UPDATE assets SET shares = shares + {$sharesToSell} WHERE id = ? \"{$symbol}\";"; //prepare shares addition $database->query
+			$OK = $database->query($sql, $_SESSION['id']);
 			apologize('Something went wrong adding cash. Sale not completed.');
 		}
 		
@@ -47,26 +47,26 @@
 		{
 			$sql = "DELETE FROM assets WHERE id = ? AND symbol = \"{$symbol}\"";
 			
-			$deleted = query($sql, $_SESSION['id']); //remove entire row from database
+			$deleted = $database->query($sql, $_SESSION['id']); //remove entire row from database
 
 		}
 
 		$date = date("Y-m-d H:i:s"); //get current date and time
 
-		//prepare query to make log of transaction
+		//prepare $database->query to make log of transaction
 		$sql = "INSERT INTO history (id, transaction_type, symbol, shares, price, date_time)  
 				VALUES (?,'Sold', '{$symbol}', {$sharesToSell}, {$price},'{$date}')";
-		$added = query($sql,$_SESSION['id']); //execute query
+		$added = $database->query($sql,$_SESSION['id']); //execute $database->query
 
-		//check to see if query was successful
+		//check to see if $database->query was successful
 		if($added === false) //roll back transactions
 		{
 			//remove cash added
 			$sql = "UPDATE users SET cash = cash - {$income} WHERE id = ?;"; //roll back cash increase
-			$OK = query($sql, $_SESSION["id"]); //execute query
+			$OK = $database->query($sql, $_SESSION["id"]); //execute $database->query
 			//restore shares once deleted
 			$sql = "UPDATE assets SET shares = shares + {$sharesToSell} WHERE id = ? \"{$symbol}\";"; //roll back shares decrease
-			$OK = query($sql, $_SESSION['id']);
+			$OK = $database->query($sql, $_SESSION['id']);
 		}
 
 		//if everything went well
