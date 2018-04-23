@@ -1,7 +1,7 @@
 <?php
 	
 	require("../includes/config.php");
-	require("objects.php");
+	require("classes.php");
 	$salt = "2a07usesomesillystringfore2uDLvp1Ii2e./U9C8sBjqp8I90dH6hi";
 	//determine whether the form was submitted and which button was pressed. (signup/login)
 	if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["btn_type"] == "signup") //if signup was pressed
