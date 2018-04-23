@@ -3,30 +3,7 @@
 	$css = "../public/css/browse_t.css";
 	$script ="../public/js/browse_t.js";
 
-	class Product {
-	    function Product($id, $name, $category, $image,$seller,$date_listed, $units, $price)
-	    {
-	    	$this->id = $id;
-	        $this->name = $name;
-	        $this->category = $category;
-	        $this->image = $image;
-	        $this->seller = $seller;
-	        $this->date_listed = $date_listed;
-	        $this->units = $units;
-	        $this->price = $price;
-	    }
-	}
-	class Item {
-                    function Item($name,$image,$seller,$units, $price, $id)
-                    {                        
-                        $this->name = $name;
-                        $this->image = $image;
-                        $this->seller = $seller;
-                        $this->units = $units;
-                        $this->price = $price;
-                        $this->id  = $id;
-                    }
-                }
+	
 
 	$all_products = array(); //array to hold all products to send to page
 

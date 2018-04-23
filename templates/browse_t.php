@@ -101,7 +101,9 @@
         <div class="carousel-inner">
 
             <div class="item active">
-
+            		<?php if(is_null($products) || empty($products)): ?>
+            			<span>There are no products for sale at this time.</span>
+            		<?php else: ?>	
                     <ul class="thumbnails">
                     	<?php foreach ($products as $product): ?>
 
@@ -141,16 +143,18 @@
 	                        </li>
 
 	                    <?php endforeach;?>
+	                <?php endif;?>
 
                     </ul>
               </div>
     	</div>
 	</div>
 </div>
-
+<div id="toggle" class="cart-footer hidden" style="left:80%; z-index: 10000" onclick="toggleCart('1')">Open Cart</div>
 <div class="cart-container">
 
-              <div class="row cart-header">
+              <div class="row cart-header"  onclick="toggleCart('0')">
+
                 <div class="col-sm-2">
                   Cart
                 </div>
@@ -168,6 +172,7 @@
                 </div>
               </div><br>
 
+              <span id = "cart-toggle" >
               <div id="cart-body">
               	<?php if (!empty($cart_items)):?>
 
@@ -210,6 +215,7 @@
           		<?php endif; ?>
               </div>
               <div class="row cart-footer checkout">Checkout</div>
+              <span>
             </div>
 
 <div class="container">
