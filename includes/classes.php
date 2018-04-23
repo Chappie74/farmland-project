@@ -52,6 +52,7 @@
 	        $this->price = $price;
 	    }
 	}
+
 	class Item {
         function Item($name,$image,$seller,$units, $price, $id)
         {                        
@@ -97,6 +98,8 @@
 	        return $handle;
 
      	}
+
+     	
           /**
      * Executes SQL statement, possibly with parameters, returning
      * an array of all rows in result set or false on (non-fatal) error.
@@ -134,4 +137,22 @@
 	        }
 	    }
      }
+
+
+
+     class cartItem {
+                    function Item($name,$image,$seller,$units, $price, $id, $user_id,$ava_amt,$p_id)
+                    {                        
+                        $this->name = $name;
+                        $this->image = $image;
+                        $this->seller = $seller;
+                        $this->units = $units;
+                        $this->price = $price;
+                        $this->id  = $id;
+                        $this->user_id  = $user_id;
+                        $this->ava_amt = $ava_amt;
+                        $this->p_id = $p_id;
+
+                    }
+                }
 ?>

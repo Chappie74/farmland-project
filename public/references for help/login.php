@@ -16,8 +16,8 @@
             apologize("You must provide your password.");
         }
 
-        // query database for user
-        $rows = query("SELECT * FROM users WHERE username = ?", $_POST["username"]);
+        // $database->query database for user
+        $rows = $database->query("SELECT * FROM users WHERE username = ?", $_POST["username"]);
 
         // if we found user, check password
         if (count($rows) == 1)
