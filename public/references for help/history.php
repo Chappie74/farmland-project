@@ -2,10 +2,10 @@
 	
 	require("../includes/config.php");
 
-	$rows = $database->query("SELECT * FROM history WHERE id = ? ORDER BY hisID DESC", $_SESSION['id']);
+	$rows = query("SELECT * FROM history WHERE id = ? ORDER BY hisID DESC", $_SESSION['id']);
 	if($rows === false)
 	{
-		apologize("Could not $database->query database for history. Try again later.");
+		apologize("Could not query database for history. Try again later.");
 	}
 
 	render("../templates/history.php", ["title" => "History", "rows" => $rows]);

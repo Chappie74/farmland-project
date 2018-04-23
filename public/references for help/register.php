@@ -14,7 +14,7 @@
 			}
 			else
 			{
-				$results = $database->query("INSERT INTO users (username, hash, cash) VALUES(?, ?,100000000.00)", $_POST["username"], crypt($_POST["password"]));
+				$results = query("INSERT INTO users (username, hash, cash) VALUES(?, ?,100000000.00)", $_POST["username"], crypt($_POST["password"]));
 
 				if($results === false)
 				{
@@ -22,7 +22,7 @@
 				}
 				else
 				{
-					$rows = $database->query("SELECT LAST_INSERT_ID() AS id");
+					$rows = query("SELECT LAST_INSERT_ID() AS id");
 					$_SESSION["id"] = $rows[0]["id"];
 					redirect("index.php");
 				}

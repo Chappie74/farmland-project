@@ -1,7 +1,8 @@
 <?php
 	
 	require("../includes/config.php");
-	require_once("../includes/classes.php");
+	require("../includes/classes.php");
+	$database = new Database();
 	$salt = "2a07usesomesillystringfore2uDLvp1Ii2e./U9C8sBjqp8I90dH6hi";
 	//determine whether the form was submitted and which button was pressed. (signup/login)
 	if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["btn_type"] == "signup") //if signup was pressed
@@ -30,7 +31,7 @@
 
 			//prepare sql insert statement for addresses first
 			$sql = "INSERT INTO addresses (lot_number, address_line, town, region) VALUES (?, ?, ?, ?)";
-			$address_results = $database->query($sql,$user->lot_number, $user->address_line, $user->town, $user->region); //execute $database->query
+			$address_results = $database->query($sql,$user->lot_number, $user->address_line, $user->town, $user->region); //execute query
 
 
 			if($address_results !== false)
@@ -41,7 +42,7 @@
 				//prepare sql to insert into users next
 				$sql = "INSERT INTO users (first_name, last_name, phone, username, password, email, cash, profile_picture, address_id) VALUES 
 						(?, ?, ?, ?, ?, ?, ?,?, ?)";
-				$rows = $database->query($sql,$user->first_name, $user->last_name, $user->phone, $user->username, crypt($user->password, $salt), $user->email, $user->cash, $user->profile_picture, $address_id); //execute $database->query
+				$rows = query($sql,$user->first_name, $user->last_name, $user->phone, $user->username, crypt($user->password, $salt), $user->email, $user->cash, $user->profile_picture, $address_id); //execute query
 
 
 				if($rows !== false)

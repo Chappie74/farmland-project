@@ -14,7 +14,6 @@
         <link rel="stylesheet" type="text/css" href="../public/css/cart.css">
 
         <?php
-          $database = new Database();
           if(isset($css))
             echo '<link rel="stylesheet" href="'.$css.'"'. "/>";
         ?>
@@ -55,14 +54,14 @@
             <?php
 
                 $sql = "SELECT profile_picture FROM users WHERE user_id = ? LIMIT 1";
-                $sql2 = $database->query("SELECT account_type, cash FROM users WHERE user_id = ? LIMIT 1",$_SESSION["id"]);
+                $sql2 = query("SELECT account_type, cash FROM users WHERE user_id = ? LIMIT 1",$_SESSION["id"]);
 
                 $current_cash = $sql2[0]["cash"];
 
                 $roll = $sql2[0]["account_type"];
 
 
-                $rows = $database->query($sql,$_SESSION["id"]);
+                $rows = query($sql,$_SESSION["id"]);
 
                 if($rows[0] != null)
                 {

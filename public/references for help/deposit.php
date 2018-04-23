@@ -12,7 +12,7 @@ require("../includes/config.php");
 		}
 
 
-		$added = $database->query("UPDATE users SET cash = cash + {$amount} WHERE id = ?",$_SESSION['id']);
+		$added = query("UPDATE users SET cash = cash + {$amount} WHERE id = ?",$_SESSION['id']);
 
 
 		if($added === false)

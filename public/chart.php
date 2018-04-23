@@ -5,7 +5,7 @@
     require("../includes/config.php"); 
 
 
-    $products = $database->query("SELECT product_id, name FROM products");
+    $products = query("SELECT product_id, name FROM products");
 
 
     $amount; 
@@ -16,7 +16,7 @@
     foreach ($products as $product){ 
 
 
-     	$amount =  $database->query("SELECT amount FROM purchase_product WHERE product_id = ?", $product["product_id"]);
+     	$amount =  query("SELECT amount FROM purchase_product WHERE product_id = ?", $product["product_id"]);
 
         foreach ($amount as $amount){
             $total += $amount["amount"];

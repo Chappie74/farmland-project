@@ -1,7 +1,6 @@
 <?php
 
 	require("../includes/config.php"); 
-	require("../includes/classes.php"); 
 	$css = "../public/css/browse_t.css";
 	$script ="../public/js/browse_t.js";
 
@@ -22,16 +21,16 @@
 
 			//search for the category id
 			$sql = "SELECT category_id FROM categories where name = ? LIMIT 1;";
-			$cat = $database->query($sql, $_POST['product_category']);
+			$cat = query($sql, $_POST['product_category']);
 			$product_category_id = $cat[0]["category_id"];
 
 			//isnert the information for the users table
 			$sql = "UPDATE products SET name = ? , category_id = ? WHERE product_id = ?;";
-			$results = $database->query($sql, $product_name, $product_category_id, $product_id);
+			$results = query($sql, $product_name, $product_category_id, $product_id);
 
 
 			$sql = "UPDATE products_for_sale SET amount = ? , price = ? WHERE product_id = ?;";
-			$results = $database->query($sql, $product_units, $product_price, $product_id);
+			$results = query($sql, $product_units, $product_price, $product_id);
 
 
 			if($results === false || $a_id === false)
@@ -44,22 +43,37 @@
 
     }
 
-
+	
+	class Product {
+	    function Product($user_id, $id, $name, $category , $category_id , $image,$seller,$date_listed, $units, $price)
+	    {
+	    	$this->user_id = $id;
+	    	$this->id = $id;
+	        $this->name = $name;
+	        $this->category = $category;
+	        $this->category_id = $category_id;
+	        $this->image = $image;
+	        $this->seller = $seller;
+	        $this->date_listed = $date_listed;
+	        $this->units = $units;
+	        $this->price = $price;
+	    }
+	}
 
 	$all_products = array(); //array to hold all products to send to page
 
 	$sql = "SELECT * FROM products;";
-	$results = $database->query($sql);
+	$results = query($sql);
 	
 
 	foreach ($results as $one) 
 	{
 		$sql = "SELECT name FROM categories WHERE category_id = ? LIMIT 1;";
-		$category = $database->query($sql, $one["category_id"]);
+		$category = query($sql, $one["category_id"]);
 		$sql = "SELECT user_id,amount, amount,date_listed,price FROM products_for_sale WHERE product_id = ? LIMIT 1";
-		$listing = $database->query($sql, $one["product_id"]);
+		$listing = query($sql, $one["product_id"]);
 		$sql = "SELECT username FROM users WHERE user_id = ? LIMIT 1";
-		$seller = $database->query($sql, $listing[0]["user_id"]);
+		$seller = query($sql, $listing[0]["user_id"]);
 		$seller = $seller[0]["username"];	 	
 		
 		//create a new product object and populate it

@@ -13,7 +13,7 @@
 			$result = preg_grep('~i' . $input . '~', $data);
 
 			$sql = "SELECT DISTINCT name FROM products WHERE name LIKE '%{$product_name}%' ";
-			$rows = $database->query($sql);
+			$rows = query($sql);
 			foreach ($rows as $row) 
 			{
 				array_push($all_names, $row["name"]);

@@ -54,8 +54,8 @@
 	}
 <<<<<<< HEAD
 
-<<<<<<< HEAD
 	
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 50b10b9... sell functionality atempt
@@ -74,6 +74,8 @@
 >>>>>>> origin/rework
 =======
 >>>>>>> parent of 50b10b9... sell functionality atempt
+=======
+>>>>>>> parent of af91e2d... Merge remote-tracking branch 'origin/rework' into rework
 
      /**
       * summary

@@ -3,7 +3,7 @@
     // configuration
     require("../includes/config.php"); 
 
-    $rows = $database->query("SELECT * FROM assets WHERE id = ?",$_SESSION['id']);    
+    $rows = query("SELECT * FROM assets WHERE id = ?",$_SESSION['id']);    
     $positions = [];
     foreach ($rows as $row)
     {
@@ -18,7 +18,7 @@
             ];
         }
     }   
-    $rows = $database->query("SELECT * FROM users WHERE id = ? LIMIT 1;",$_SESSION['id']);
+    $rows = query("SELECT * FROM users WHERE id = ? LIMIT 1;",$_SESSION['id']);
     $cash = number_format($rows[0]["cash"],2);
     
 
