@@ -4,7 +4,7 @@
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../public/css/bootstrap.css" rel="stylesheet"/>
+        <link href="../public/css/bootstrap3-cyborg.css" rel="stylesheet"/>
 
 
 

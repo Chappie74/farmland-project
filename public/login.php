@@ -61,13 +61,10 @@
 	{
 		$username = (string)$_POST["username"];
 		$password = (string)$_POST["password"];
-
-		$user = new User;
-		$user->username = $username;
-		$user->password = $password;
+		
 
 		$sql = "SELECT * FROM users WHERE username = ? OR email = ? AND password = ? LIMIT 1";
-		$rows = query($sql, $user->username, $user->username,crypt($user->password,$salt));
+		$rows = query($sql, $username, $username,crypt($password,$salt));
 		
 		
 		if($rows != [])

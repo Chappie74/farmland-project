@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Log In or Sign Up</title>
-  <link href="../public/css/bootstrap.css" rel="stylesheet"/>
+  <link href="../public/css/bootstrap3-cyborg.css" rel="stylesheet"/>
   <link href="../public/css/styles.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="../public/js/jquery-1.10.2.min.js"></script>

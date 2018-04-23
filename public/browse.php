@@ -38,7 +38,7 @@
 	{
 		$sql = "SELECT name FROM categories WHERE category_id = ? LIMIT 1;";
 		$category = query($sql, $one["category_id"]);
-		$sql = "SELECT user_id,amount, amount,date_listed,price FROM products_for_sale WHERE product_id = ? LIMIT 1";
+		$sql = "SELECT user_id,amount,date_listed,price FROM products_for_sale WHERE product_id = ? AND amount >= 1 LIMIT 1";
 		$listing = query($sql, $one["product_id"]);
 		$sql = "SELECT username FROM users WHERE user_id = ? LIMIT 1";
 		$seller = query($sql, $listing[0]["user_id"]);
