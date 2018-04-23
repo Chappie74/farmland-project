@@ -121,7 +121,7 @@
 
 											<h4 class="text-center" style="text-transform:capitalize;"><?php echo $product->name; ?></h4>
 											<p><?php echo $product->category; ?></p>
-											<p>Units Available: <?php echo $product->units; ?></p>
+											<p>Units Available: <?php echo $product->amount; ?></p>
 											<p>Price: <?php echo $product->price; ?></p>
 											<p>Date listed: <?php echo $product->date_listed; ?></p>
 											<p>Sold By: <?php echo $product->seller; ?></p>
