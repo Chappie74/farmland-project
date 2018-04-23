@@ -34,16 +34,7 @@
                     move_uploaded_file($fileTmpName, $fileDestination);
 
                     $sql = "SELECT category_id FROM categories WHERE name = ? LIMIT 1";
-<<<<<<< HEAD
-                    $rows = query($sql,$category);//query the category id
-                   
-                    $results = query($sql,$product_name,$rows[0]["category_id"],$fileDestination); //insert product information
-=======
-                    $rows = $database->query($sql,$category);//$database->query the category id
-                    
-                    $sql = "INSERT INTO products (name,category_id, image) VALUES (?,?,?);";
-                    $results = $database->query($sql,$product_name,$rows[0]["category_id"],$fileDestination); //insert product information
->>>>>>> origin/rework
+
 
                     $insert_array1 = array(
                         'name' =>$product_name,
@@ -55,7 +46,7 @@
                     data->query($sql,$insert_array1);
 
                     
-<<<<<<< HEAD
+
                     $last_product_id = query("SELECT LAST_INSERT_ID() AS id");
 
 
@@ -69,15 +60,9 @@
                     
                     $sql = "INSERT INTO products_for_sale (user_id,product_id,amount,date_listed, price) VALUES (?,?,?,?,?)";
                     data->query($sql,$insert_array2);
-                    
-                       
-=======
-                    $last_product_id = $database->query("SELECT LAST_INSERT_ID() AS id");
-                    
 
-                    $sql = "INSERT INTO products_for_sale (user_id,product_id,amount,date_listed, price) VALUES (?,?,?,CURRENT_DATE(),?)";
-                    $results = $database->query($sql, $_SESSION["id"], $last_product_id[0]["id"],$amount,$price);    
->>>>>>> origin/rework
+    
+
                     redirect("index.php");               
                     
                 }else   
@@ -89,13 +74,10 @@
     }
 
     $sql = "SELECT * FROM categories ORDER BY name;";
-<<<<<<< HEAD
-    rows = new Database();
-    row->query($sql);
 
-=======
-    $rows = $database->query($sql);
->>>>>>> origin/rework
+    rows = new Database();
+    row->query($sql);;
+
     // dump($rows);
     render("../templates/sell_t.php", ["title" => "Sell a product",
     									"categories" => rows,
