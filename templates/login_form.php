@@ -31,7 +31,7 @@
       }
   </style>
 </head>
-<body background="../public/img/background/farmland1.png">
+<body background="../public/img/background/grey.png">
 
 
 <script type="text/javascript">
