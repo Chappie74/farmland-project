@@ -63,7 +63,21 @@
 	    }
 	}
 
+<<<<<<< HEAD
 	
+=======
+	class Item {
+        function Item($name,$image,$seller,$units, $price, $id)
+        {                        
+         	$this->name = $name;
+            $this->image = $image;
+            $this->seller = $seller;
+            $this->units = $units;
+            $this->price = $price;
+            $this->id  = $id;
+        }
+     }
+>>>>>>> origin/rework
 
      /**
       * summary
