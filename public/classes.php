@@ -9,17 +9,17 @@
 		     * summary
 		     */
 		    public $first_name;
-		    private $last_name;
-		    private $lot_number;
-		    private $address_line;
+		    public $last_name;
+		    public $lot_number;
+		    public $address_line;
 		    private $town;
-		    private $region;
-		    private $email;
-		    private $username;
-		    private $password;
-		    private $phone;
-		    private $cash;
-		    private $profile_picture;
+		    public $region;
+		    public $email;
+		    public $username;
+		    public $password;
+		    public $phone;
+		    public $cash;
+		    public $profile_picture;
 
 		    public function __construct($first_name, $last_name, $lot_number,$address_line, $town, $region, $email, $username, $password, $phone, $profile_picture)
 		    {
