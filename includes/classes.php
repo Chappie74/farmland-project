@@ -1,7 +1,3 @@
-
-    
-
-
 <?php
 
 /**
@@ -44,28 +40,25 @@
 		}
 
 	class Product {
-
-		public $id;
-		public $name;
-		public $category;
-		public $image;
-		public $amount;
-	    public $price;
-
-	    function Product($id, $name, $category, $image, $amount, $price)
+	    function Product($id, $name, $category, $image,$seller,$date_listed, $units, $price)
 	    {
 	    	$this->id = $id;
 	        $this->name = $name;
 	        $this->category = $category;
 	        $this->image = $image;
-	        $this->amount = $amount;
+	        $this->seller = $seller;
+	        $this->date_listed = $date_listed;
+	        $this->units = $units;
 	        $this->price = $price;
 	    }
 	}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 	
 =======
+=======
+>>>>>>> parent of 50b10b9... sell functionality atempt
 	class Item {
         function Item($name,$image,$seller,$units, $price, $id)
         {                        
@@ -77,7 +70,10 @@
             $this->id  = $id;
         }
      }
+<<<<<<< HEAD
 >>>>>>> origin/rework
+=======
+>>>>>>> parent of 50b10b9... sell functionality atempt
 
      /**
       * summary
@@ -112,8 +108,6 @@
 	        return $handle;
 
      	}
-
-     	
           /**
      * Executes SQL statement, possibly with parameters, returning
      * an array of all rows in result set or false on (non-fatal) error.
@@ -151,22 +145,4 @@
 	        }
 	    }
      }
-
-
-
-     class cartItem {
-                    function Item($name,$image,$seller,$units, $price, $id, $user_id,$ava_amt,$p_id)
-                    {                        
-                        $this->name = $name;
-                        $this->image = $image;
-                        $this->seller = $seller;
-                        $this->units = $units;
-                        $this->price = $price;
-                        $this->id  = $id;
-                        $this->user_id  = $user_id;
-                        $this->ava_amt = $ava_amt;
-                        $this->p_id = $p_id;
-
-                    }
-                }
 ?>
