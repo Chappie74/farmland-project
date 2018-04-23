@@ -154,13 +154,14 @@
 <div class="cart-container">
 
               <div class="row cart-header"  onclick="toggleCart('0')">
-
-                <div class="col-sm-2">
-                  Cart
-                </div>
-                <div class="col-sm-8" style="padding-left: 5px;" >
-                  Total: $<span id="cart_total"><?php echo $cart_total?></span>
-                </div>
+              	<span class="closeCart">
+	                <div class="col-sm-2">
+	                  Cart
+	                </div>
+	                <div class="col-sm-8" style="padding-left: 5px;" >
+	                  Total: $<span id="cart_total"><?php echo $cart_total?></span>
+	                </div>
+            	</span>
                 <div class="dropdown">
                 <div class="col-sm-2 text-center " id="ellipsis">
                     <div class="fa fa-ellipsis-v " style="font-size:24px;padding-left:10px;padding-right:10px;margin-left:-20px;" data-toggle="dropdown"></div>

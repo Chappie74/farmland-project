@@ -238,12 +238,12 @@ function checkBalance() {
 function toggleCart (val) {
   if(val == "0")
   {
-    $(".cart-container").slideUp('fast', function() {
+    $(".closeCart").slideUp('fast', function() {
       $('#toggle').toggleClass('hidden');
     });
   }
   else {
-    $(".cart-container").slideDown('fast', function() {
+    $(".closeCart").slideDown('fast', function() {
       $('#toggle').toggleClass('hidden');
     });
   }

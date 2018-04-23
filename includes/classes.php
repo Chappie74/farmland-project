@@ -141,7 +141,7 @@
 
 
      class cartItem {
-                    function Item($name,$image,$seller,$units, $price, $id, $user_id,$ava_amt,$p_id)
+                    function cartItem($name,$image,$seller,$units, $price, $id, $user_id,$ava_amt,$p_id)
                     {                        
                         $this->name = $name;
                         $this->image = $image;
