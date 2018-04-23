@@ -63,9 +63,8 @@
 	    }
 	}
 
-<<<<<<< HEAD
 	
-=======
+
 	class Item {
         function Item($name,$image,$seller,$units, $price, $id)
         {                        
@@ -77,7 +76,7 @@
             $this->id  = $id;
         }
      }
->>>>>>> origin/rework
+
 
      /**
       * summary
