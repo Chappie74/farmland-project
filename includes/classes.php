@@ -12,7 +12,7 @@
 		    public $last_name;
 		    public $lot_number;
 		    public $address_line;
-		    private $town;
+		    public $town;
 		    public $region;
 		    public $email;
 		    public $username;
