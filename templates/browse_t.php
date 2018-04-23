@@ -153,8 +153,8 @@
 <div id="toggle" class="cart-footer hidden" style="left:80%; z-index: 10000" onclick="toggleCart('1')">Open Cart</div>
 <div class="cart-container">
 
-              <div class="row cart-header"  onclick="toggleCart('0')">
-              	<span class="closeCart">
+              <div class="row cart-header"  >
+              	<span class="closeCart" onclick="toggleCart('0')">
 	                <div class="col-sm-2">
 	                  Cart
 	                </div>
